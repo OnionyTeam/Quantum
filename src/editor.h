@@ -15,8 +15,8 @@ class Editor
 {
 public:
     Editor(std::string filename = "");
-    void open_file();
-    void load_file(std::string filename = "");      // load file to buf
+    void open_file(std::string filename = "");
+    void load_file();      // load file to buf
     void update_view();
 
 private:

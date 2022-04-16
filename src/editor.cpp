@@ -1,4 +1,5 @@
 #include "editor.h"
+#include <iostream>
 
 Editor::Editor(std::string filename)
     this->config {}
@@ -25,7 +26,7 @@ void Editor::load_file()
     }
     else
     {
-        cerr << "Cannot open file: '" << fn << endl;
-        buff->appendLine("");
+        std::cerr << "Cannot open file: '" << fn << std::endl;
+        buf->appendLine("");
     }
 }

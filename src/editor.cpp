@@ -1,16 +1,17 @@
 #include "editor.h"
 #include <fstream>
 #include <iostream>
+#include <utility>
 
 Editor::Editor(std::string filename)
     : buf(new Buffer())
 {
-    config.filename = filename;
+    config.filename = std::move(filename);
 }
 
 void Editor::open_file(std::string filename)
 {
-    config.filename = filename;
+    config.filename = std::move(filename);
     load_file();
 }
 
@@ -37,8 +38,8 @@ void Editor::load_file()
 
 void Editor::update_view()
 {
-    for (size_t i = 0; i < buf->lines.size(); ++i)
+    for (auto & line : buf->lines)
     {
-        std::cout << buf->lines.at(i) << std::endl;
+        std::cout << line << std::endl;
     }
 }

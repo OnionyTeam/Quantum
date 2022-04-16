@@ -16,14 +16,12 @@ int Quantum::run()
     // Parse the args
     std::string filename = parser.get<std::string>("f");
 
-    if ("" == filename)     // if did not select a filename to open
-    {
-        
-    }
-    std::cout << filename << std::endl;
+    std::cout << "Open " << filename << "..." << std::endl;
+
     Editor e(filename);
     e.load_file();
 
+    endwin();               // release source    
 
     return 0;
 }
@@ -40,6 +38,7 @@ void Quantum::parser_init()
 {
     parser.set_optional<std::string>("f", "file", "", "Open a file");
 }
+
 Quantum::~Quantum()
 {
 

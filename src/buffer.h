@@ -18,8 +18,8 @@ public:
     std::vector<std::string> lines;
 
     Buffer();
-    void insert_line(std::string line, config::position_type pos);
-    void append_line(std::string line);
+    void insert_line(const std::string& line, config::position_type pos);
+    void append_line(const std::string& line);
     void remove_line(config::position_type pos);
 
 

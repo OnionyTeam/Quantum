@@ -1,5 +1,6 @@
 #include "quantum.h"
 #include <iostream>
+#include <ncurses>
 #include "global_config.h"
 
 Quantum::Quantum(int argc, char* argv[])
@@ -13,14 +14,26 @@ int Quantum::run()
 {
     // Parse the args
     std::string filename = parser.get<std::string>("f");
-    if ("" == filename)
-        std::cout << "SHIT!" << std::endl;
+
+    if ("" == filename)     // if did not select a filename to open
+    {
+        
+    }
+        
 
     std::cout << filename << std::endl;
     
 
 
     return 0;
+}
+
+void Quantum::ncurses_init()
+{
+    initscr();
+    noecho();
+    cbreak();               // Disable line buffering
+    keypad(stdscr, true);
 }
 
 void Quantum::configure_parser()

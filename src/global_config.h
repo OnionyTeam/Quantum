@@ -12,6 +12,8 @@
 // program description
 namespace config {
 
+    using position_type = size_t;
+
     static std::string program_description = "Quantum is a console-run editor and it has special shortcuts to help "
         "people code quickly. But it's still in the preparatory stage";
 

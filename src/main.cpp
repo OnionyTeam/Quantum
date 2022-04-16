@@ -4,6 +4,6 @@
 int main(int argc, char* argv[])
 {
     Quantum q(argc, argv);
-    q.run();
+    return q.run();
 }
 

@@ -1,18 +1,28 @@
 
-#ifndef __QUANTUM_QUANTUM_H_
-#define __QUANTUM_QUANTUM_H_
+#ifndef _QUANTUM_QUANTUM_H__
+#define _QUANTUM_QUANTUM_H__
 
-#include <iostream>
 #include <string>
-#include <vector>
+#include "libs/cmd_parser/cmdparser.h"
 
 class Quantum
 {
+
+public:
+
+    static std::string program_description;
 public:
     Quantum(int argc, char* argv[]);
 
+    int run();
+
+    ~Quantum();
+
 private:
-    std::vector<std::string> args;
+    cli::Parser parser;
+
+private:
+    void configure_parser();
 };
 
 #endif //__QUANTUM_QUANTUM_H_

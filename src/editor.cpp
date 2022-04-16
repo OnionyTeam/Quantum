@@ -25,6 +25,7 @@ void Editor::load_file()
             std::getline(infile, temp);
             buf->append_line(temp);
         }
+        infile.close();
     }
     else
     {

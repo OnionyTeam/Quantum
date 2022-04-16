@@ -1,8 +1,9 @@
-#include "ProgramEntry.hpp"
-using namespace std;
+#include <iostream>
+#include "quantum.h"
 
-int main(int argc, char **argv) {
-    QuantomProgram prog(argc, argv);
-    prog.runProgram();
-    return 0;
+int main(int argc, char* argv[])
+{
+    Quantum q(argc, argv);
+    q.run();
 }
+

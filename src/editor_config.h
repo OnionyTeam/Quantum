@@ -7,5 +7,6 @@
 struct EditorConfig
 {
     std::string filename;
-}
+};
+
 #endif //_QUANTUM_EDITOR_CONFIG_H__

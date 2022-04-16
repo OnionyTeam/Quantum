@@ -2,7 +2,9 @@
 #define _QUANTUM_WINDOW_H__
 
 #include <memory>
+#include <ncurses.h>
 #include "editor.h"
+
 
 // description a window
 struct WindowInfo
@@ -16,11 +18,15 @@ struct WindowInfo
 class Window
 {
 public:
+    Window();
     Window(WindowInfo info);
+    void draw();
+    void refresh();
     ~Window();
 
 private:
-    Editor editor;      // child component
+    std::shared_ptr<Editor> editor;      // child component
+    std::shared_ptr<WINDOW> win;
     WindowInfo info;
 
 };

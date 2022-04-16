@@ -1,5 +1,5 @@
 CXX := clang++
-CXXFLAGS := -c -Wall
+CXXFLAGS := -c -Wall --std=c++17 -g
 LD := clang++
 LDFLAGS := -lncurses
 
@@ -13,6 +13,9 @@ EXE := quantum
 .PHONY: all clean
 
 all: $(EXE)
+
+run: all
+	./$(EXE)
 
 clean:
 	rm -f $(OBJ)

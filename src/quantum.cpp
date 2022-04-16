@@ -3,11 +3,13 @@
 #include <ncurses.h>
 #include "editor.h"
 #include "global_config.h"
+#include "view.h"
 
 Quantum::Quantum(int argc, char* argv[])
     : parser(argc, argv, config::program_description)
 {
     parser_init();
+    ncurses_init();
     parser.run_and_exit_if_error();
 }
 
@@ -16,10 +18,9 @@ int Quantum::run()
     // Parse the args
     std::string filename = parser.get<std::string>("f");
 
-    std::cout << "Open " << filename << "..." << std::endl;
-
-    Editor e(filename);
-    e.load_file();
+    View v;
+    /* v.update(); */
+    getch();
 
     endwin();               // release source    
 
@@ -29,9 +30,10 @@ int Quantum::run()
 void Quantum::ncurses_init()
 {
     initscr();
-    noecho();
-    cbreak();               // Disable line buffering
-    keypad(stdscr, true);
+    clear();
+    /* noecho(); */
+    /* cbreak();               // Disable line buffering */
+    /* keypad(stdscr, true); */
 }
 
 void Quantum::parser_init()

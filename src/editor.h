@@ -10,11 +10,11 @@
 #include <memory>
 #include "buffer.h"
 #include "editor_config.h"
-#include "window.h"
+// #include "window.h"
+
 
 class Editor
 {
-    friend Window;
 public:
     Editor(std::string filename = "");
     void open_file(std::string filename = "");

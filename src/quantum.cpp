@@ -34,6 +34,7 @@ int Quantum::run()
         w.update();
     }
     refresh();
+    endwin();
 
     return 0;
 }

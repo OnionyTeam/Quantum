@@ -14,7 +14,6 @@
 
 struct Buffer
 {
-public:
     std::vector<std::string> lines;
 
     Buffer();

@@ -41,7 +41,8 @@ void Editor::update_buffer()
         // first, clear the window
         wclear(window);
         wrefresh(window);
-        for (int i = 0; i < _window_info.rows; ++i)
+        auto line_num = _current_buffer->lines.size();
+        for (int i = 0; i < line_num; ++i)
         {
             // print the buffer
             mvwprintw(window, i, 0,

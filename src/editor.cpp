@@ -36,7 +36,6 @@ void Editor::update_buffer()
     WINDOW *window = _window.get();
     assert(window != nullptr);
     auto size = _changed_lines;
-    assert(_editor_info.refresh_all);
     if (_editor_info.refresh_all)
     {
         // first, clear the window
@@ -55,7 +54,7 @@ void Editor::update()
 {
     update_buffer();
     wrefresh(_window.get());
-    refresh();
+    // refresh();
 }
 
 void Editor::load_file()

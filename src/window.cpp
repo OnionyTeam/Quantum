@@ -1,9 +1,10 @@
 #include "window.h"
 #include "editor.h"
+#include <cassert>
 Window::Window(const std::string &filename) 
     : _editors()
 {
-    auto editor = std::make_shared<Editor>(filename);
+    auto editor = std::make_shared<Editor>(filename, WindowInfo{10, 10, 0, 0});
     _current_editor = editor;
     _editors.push_back(editor);
 }

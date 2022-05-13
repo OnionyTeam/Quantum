@@ -9,15 +9,15 @@
 
 class View 
 {
-public:
-    View();
-    void update();
-    ~View();
-private:
+protected:
     std::vector<std::shared_ptr<Buffer>> _buffers;
     std::shared_ptr<Buffer> _current_buffer;
     std::shared_ptr<WINDOW> _window;
-    EditorConfig _config;
+    WindowInfo _window_info;
+public:
+    View(const WindowInfo &info = {0,0,0,0});
+    void update();
+    ~View();
 };
 
 #endif //_QUANTUM_VIEW_H__

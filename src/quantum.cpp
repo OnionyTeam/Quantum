@@ -17,6 +17,19 @@ int Quantum::run()
     // Parse the args
     std::string filename = parser.get<std::string>("f");
 
+    ncurses_init();
+
+    Window w(filename);
+    w.update();
+    refresh();
+    getch();
+    endwin();
+
+    return 0;
+}
+
+void Quantum::ncurses_init()
+{
     // init ncurses screen, making main window too
     initscr();
     // change how terminal input works
@@ -29,23 +42,6 @@ int Quantum::run()
     // get all keys
     keypad(stdscr, true);
 
-    Window w;
-    while (true) {
-        w.update();
-    }
-    refresh();
-    endwin();
-
-    return 0;
-}
-
-void Quantum::ncurses_init()
-{
-    initscr();
-    clear();
-    /* noecho(); */
-    /* cbreak();               // Disable line buffering */
-    /* keypad(stdscr, true); */
 }
 
 void Quantum::parser_init()

@@ -4,7 +4,7 @@
 Window::Window(const std::string &filename) 
     : _editors()
 {
-    auto editor = std::make_shared<Editor>(filename, WindowInfo{0, 0, 0, 0});
+    auto editor = std::make_shared<Editor>(filename, true);
     _current_editor = editor;
     _editors.push_back(editor);
 }

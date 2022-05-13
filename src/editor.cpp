@@ -3,8 +3,8 @@
 #include <cassert>
 #include <fstream>
 
-Editor::Editor(const std::string &filename, const WindowInfo &info)
-    : View(info)
+Editor::Editor(const std::string &filename, bool active, const WindowInfo &info)
+    : View(info), _active(active)
 {
     _editor_info.filename = filename;
     _editor_info.cursor_info = {0};
@@ -46,18 +46,22 @@ void Editor::update_buffer()
         for (int i = 0; i < line_num; ++i)
         {
             // print the buffer
-            mvwprintw(window, i, 0,
+            mvwaddstr(window, i, 0,
                       _current_buffer->lines[i].c_str());
         }
         // wmove(window, static_cast<int>(_current_buffer->lines.back().size()), _current_buffer->lines.size());
-    } 
-    // else {
-    //     if (_changed_lines.empty()) 
-    //         return;
-    //     for (auto end_pos = _changed_lines.end(); end_pos != _changed_lines.begin(); --end_pos) {
-    //         mvwprintw(window, *end_pos, 0,
-    //                   _current_buffer->lines[*end_pos].c_str());
-    //         _changed_lines.pop_back();
+        if (_active)
+            wmove(window, _editor_info.cursor_info.x, _editor_info.cursor_info.y);
+        wrefresh(window);
+        _editor_info.refresh_all = false;
+    }
+    // else 
+    // {
+    //     while (!_changed_lines.empty())
+    //     {
+    //         auto line_num = _changed_lines.top();
+    //         mvwaddstr(_window.get(), line_num, 0, _current_buffer->lines[line_num].c_str());
+    //         _changed_lines.pop();
     //     }
     // }
 }
@@ -65,7 +69,6 @@ void Editor::update_buffer()
 void Editor::update()
 {
     update_buffer();
-    wrefresh(_window.get());
 }
 
 void Editor::load_file()
@@ -82,7 +85,7 @@ void Editor::load_file()
         while (!std::getline(infile, temp).eof())
         {
             _current_buffer->append_line(temp);
-            _changed_lines.push_back(i);
+            // _changed_lines.push(i);
             i++;
         }
     }

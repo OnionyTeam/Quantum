@@ -8,16 +8,14 @@ Quantum::Quantum(int argc, char* argv[])
     : parser(argc, argv, config::program_description)
 {
     parser_init();
-    ncurses_init();
     parser.run();
+    ncurses_init();
 }
 
 int Quantum::run()
 {
     // Parse the args
     std::string filename = parser.get<std::string>("f");
-
-    ncurses_init();
 
     Window w(filename);
     while (true)

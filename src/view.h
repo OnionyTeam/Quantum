@@ -15,7 +15,7 @@ protected:
     std::shared_ptr<WINDOW> _window;
     WindowInfo _window_info;
 public:
-    View(const WindowInfo &info = {0,0,0,0});
+    View(const WindowInfo &info = {0});
     void update();
     ~View();
 };

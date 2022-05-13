@@ -4,7 +4,6 @@
 Buffer::Buffer()
     : lines()
 {
-    lines.push_back("");
 }
 
 void Buffer::insert_line(const std::string& line, config::position_type pos)

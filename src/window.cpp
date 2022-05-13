@@ -1,32 +1,21 @@
 #include "window.h"
-#include <iostream>
-#include <ncurses.h>
 
-Window::Window()
-    : win(std::shared_ptr<WINDOW>(newwin(0, 0, 0, 0)))   // full screen
+Window::Window() 
+    : _views()
 {
-    this->info = { 0 };
-    box(win.get(), 0, 0);
-    refresh();
+    auto view = std::make_shared<View>();
+    _current_view = view;
+    _views.push_back(view);
 }
 
-void Window::draw()
+void Window::update()
 {
-}
-void Window::refresh()
-{
-    draw();
-    wrefresh(win.get());
-}
-Window::Window(WindowInfo info)
-    : win(std::shared_ptr<WINDOW>(newwin(info.lines, info.columns,
-                    info.x, info.y)))
-{
-    this->info = info;
-
+    for (auto &e : _views) {
+        e->update();
+    }
 }
 
 Window::~Window()
 {
-    delwin(win.get());
+
 }

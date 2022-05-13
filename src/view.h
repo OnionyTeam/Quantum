@@ -2,23 +2,22 @@
 #define _QUANTUM_VIEW_H__
 
 #include <vector>
-#include <ncurses.h>
 #include <memory>
-#include "window.h"
+#include "editor_config.h"
+#include <ncurses.h>
+#include "buffer.h"
 
-// View is used to render the screen
-class View
+class View 
 {
-
 public:
     View();
     void update();
     ~View();
-
 private:
-    std::vector<std::shared_ptr<Window>> windows;    // child windows
-    std::shared_ptr<Window> active_window;
-
+    std::vector<std::shared_ptr<Buffer>> _buffers;
+    std::shared_ptr<Buffer> _current_buffer;
+    std::shared_ptr<WINDOW> _window;
+    EditorConfig _config;
 };
 
 #endif //_QUANTUM_VIEW_H__

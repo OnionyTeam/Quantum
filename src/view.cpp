@@ -1,24 +1,24 @@
 #include "view.h"
-#include <iostream>
 
-View::View()
+View::View() 
+    : _buffers(), _config()
 {
-    // add a full-screen window
-    std::shared_ptr<Window> w(new Window);
-    this->windows.push_back(w);
-    this->active_window = w;
-
+    _config.filename = "untitled";
+    _buffers.push_back(std::make_shared<Buffer>());
+    _current_buffer = _buffers.back();
+    _window = std::shared_ptr<WINDOW>(newwin(0, 0, 0, 0),
+    [](WINDOW* w){
+        delwin(w);
+    });
+    redrawwin(_window.get());
 }
 
 void View::update()
 {
-    for (auto &w : windows)
-    {
-        w->refresh();
-    }
+    mvwprintw(_window.get(), 5, 5, "HELLO, WORLD!");
+    wrefresh(_window.get());
 }
 
 View::~View()
 {
-
 }

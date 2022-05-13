@@ -1,33 +1,17 @@
 #ifndef _QUANTUM_WINDOW_H__
 #define _QUANTUM_WINDOW_H__
 
-#include <memory>
-#include <ncurses.h>
-#include "editor.h"
+#include "view.h"
 
-
-// description a window
-struct WindowInfo
-{
-    int lines;
-    int columns;
-    int x;
-    int y;
-};
-
-class Window
+class Window 
 {
 public:
     Window();
-    Window(WindowInfo info);
-    void draw();
-    void refresh();
+    void update();
     ~Window();
-
 private:
-    std::shared_ptr<Editor> editor;      // child component
-    std::shared_ptr<WINDOW> win;
-    WindowInfo info;
-
+    std::vector<std::shared_ptr<View>> _views;
+    std::shared_ptr<View> _current_view;
 };
+
 #endif //_QUANTUM_WINDOW_H__

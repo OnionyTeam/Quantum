@@ -1,16 +1,15 @@
 #include "quantum.h"
 #include <iostream>
 #include <ncurses.h>
-#include "editor.h"
+#include "window.h"
 #include "global_config.h"
-#include "view.h"
 
 Quantum::Quantum(int argc, char* argv[])
     : parser(argc, argv, config::program_description)
 {
     parser_init();
     ncurses_init();
-    parser.run_and_exit_if_error();
+    parser.run();
 }
 
 int Quantum::run()
@@ -18,11 +17,23 @@ int Quantum::run()
     // Parse the args
     std::string filename = parser.get<std::string>("f");
 
-    View v;
-    /* v.update(); */
-    getch();
+    // init ncurses screen, making main window too
+    initscr();
+    // change how terminal input works
+    // initialise colours
+    start_color();
+    // don't echo typed characters back
+    noecho();
+    // characters read 1 by 1
+    cbreak();
+    // get all keys
+    keypad(stdscr, true);
 
-    endwin();               // release source    
+    Window w;
+    while (true) {
+        w.update();
+    }
+    refresh();
 
     return 0;
 }

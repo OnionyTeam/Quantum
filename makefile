@@ -1,6 +1,6 @@
-CXX := clang++
+CXX := g++
 CXXFLAGS := -c -Wall --std=c++17 -g
-LD := clang++
+LD := g++
 LDFLAGS := -lncurses
 
 SRCDIR := src

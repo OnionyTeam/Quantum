@@ -40,8 +40,7 @@ void Editor::update_buffer()
     if (_editor_info.refresh_all)
     {
         // first, clear the window
-        // wclear(window);
-        // wrefresh(window);
+        wclear(window);
         auto line_num = static_cast<int>(_current_buffer->lines.size());
         for (int i = 0; i < line_num; ++i)
         {
@@ -49,21 +48,11 @@ void Editor::update_buffer()
             mvwaddstr(window, i, 0,
                       _current_buffer->lines[i].c_str());
         }
-        // wmove(window, static_cast<int>(_current_buffer->lines.back().size()), _current_buffer->lines.size());
         if (_active)
             wmove(window, _editor_info.cursor_info.x, _editor_info.cursor_info.y);
         wrefresh(window);
         _editor_info.refresh_all = false;
     }
-    // else 
-    // {
-    //     while (!_changed_lines.empty())
-    //     {
-    //         auto line_num = _changed_lines.top();
-    //         mvwaddstr(_window.get(), line_num, 0, _current_buffer->lines[line_num].c_str());
-    //         _changed_lines.pop();
-    //     }
-    // }
 }
 
 void Editor::update()

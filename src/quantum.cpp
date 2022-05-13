@@ -20,7 +20,8 @@ int Quantum::run()
     ncurses_init();
 
     Window w(filename);
-    w.update();
+    while (true)
+        w.update();
     refresh();
     getch();
     endwin();

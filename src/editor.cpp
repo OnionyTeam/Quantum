@@ -98,18 +98,22 @@ void Editor::key_input_event(int key)
     switch (key)
     {
     case KEY_LEFT:
-        _editor_info.cursor_info.move_left();
+        if (_editor_info.cursor_info.x > 0)
+            _editor_info.cursor_info.move_left();
         break;
     case KEY_RIGHT:
-        _editor_info.cursor_info.move_right();
+        if (static_cast<int>(_current_buffer->lines[_editor_info.cursor_info.y].size()) > _editor_info.cursor_info.x)
+            _editor_info.cursor_info.move_right();
         break;
     case KEY_DOWN:
-        _editor_info.cursor_info.move_down();
+        if (static_cast<int>(_current_buffer->lines.size()) > _editor_info.cursor_info.y)
+            _editor_info.cursor_info.move_down();
         break;
     case KEY_UP:
-        _editor_info.cursor_info.move_up();
+        if (_editor_info.cursor_info.y > 0)
+            _editor_info.cursor_info.move_up();
         break;
-    case KEY_BACKSPACE:
+    case KEY_BACKSPACE: //此处也有问题、、
     {
 
         if (_editor_info.cursor_info.x == 0 && _editor_info.cursor_info.y == 0) // no charactor could delete
@@ -133,7 +137,7 @@ void Editor::key_input_event(int key)
         }
         break;
     }
-    case '\n':
+    case '\n':      //此处有问题
     {
         int y = _editor_info.cursor_info.y;
         _current_buffer->insert_line("", y + 1);

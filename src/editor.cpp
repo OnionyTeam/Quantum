@@ -98,20 +98,16 @@ void Editor::key_input_event(int key)
     switch (key)
     {
     case KEY_LEFT:
-        if (_editor_info.cursor_info.x > 0)
-            _editor_info.cursor_info.move_left();
+        this->move_left();
         break;
     case KEY_RIGHT:
-        if (static_cast<int>(_current_buffer->lines[_editor_info.cursor_info.y].size()) > _editor_info.cursor_info.x)
-            _editor_info.cursor_info.move_right();
+        this->move_right();
         break;
     case KEY_DOWN:
-        if (static_cast<int>(_current_buffer->lines.size()) > _editor_info.cursor_info.y)
-            _editor_info.cursor_info.move_down();
+        this->move_down();
         break;
     case KEY_UP:
-        if (_editor_info.cursor_info.y > 0)
-            _editor_info.cursor_info.move_up();
+        this->move_up();
         break;
     case KEY_BACKSPACE: //此处也有问题、、
     {
@@ -123,14 +119,14 @@ void Editor::key_input_event(int key)
             int y = _editor_info.cursor_info.y;
             _editor_info.cursor_info.x = static_cast<int>(_current_buffer->lines[y - 1].size());
             _current_buffer->remove_line(y);
-            _editor_info.cursor_info.move_down();
+            this->move_up();
             _editor_info.modified = true;
         }
         else
         {
             int y = _editor_info.cursor_info.y;
             _current_buffer->lines[y].
-                    erase(_editor_info.cursor_info.x);
+                    erase(_editor_info.cursor_info.x-1, 1);
             _editor_info.cursor_info.move_left();
             _editor_info.modified = true;
             
@@ -149,4 +145,36 @@ void Editor::key_input_event(int key)
     default:
         type_char(key);
     }
+}
+
+void Editor::move_down()
+{
+    if (static_cast<int>(_current_buffer->lines.size()) > _editor_info.cursor_info.y)
+    {
+        _editor_info.cursor_info.move_down();
+        _editor_info.cursor_info.x = 
+            _current_buffer->lines[_editor_info.cursor_info.y].size();
+    }
+}
+
+void Editor::move_up()
+{
+    if (_editor_info.cursor_info.y > 0)
+    {
+        _editor_info.cursor_info.move_up();
+        _editor_info.cursor_info.x = 
+            _current_buffer->lines[_editor_info.cursor_info.y].size();
+    }
+}
+
+void Editor::move_left()
+{
+    if (_editor_info.cursor_info.x > 0)
+        _editor_info.cursor_info.move_left();
+}
+
+void Editor::move_right()
+{
+    if (static_cast<int>(_current_buffer->lines[_editor_info.cursor_info.y].size()) > _editor_info.cursor_info.x)
+        _editor_info.cursor_info.move_right();
 }

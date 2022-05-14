@@ -21,6 +21,13 @@ public:
     bool active() { return _active; }
     void type_char(char c);       //type from the current cursor position
     const EditorInfo& get_editor_info() const { return _editor_info; }
+
+    //Using this method is safe
+    void move_up();
+    void move_down();
+    void move_left();
+    void move_right();
+
     ~Editor() {}
 private:
     void load_file();

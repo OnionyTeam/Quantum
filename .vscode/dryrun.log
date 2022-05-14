@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/momo/workspace/Quantum'
+mkdir obj
+g++ -c -Wall --std=c++17  src/view.cpp -o obj/view.o
+g++ -c -Wall --std=c++17  src/editor.cpp -o obj/editor.o
+g++ -c -Wall --std=c++17  src/quantum.cpp -o obj/quantum.o
+g++ -c -Wall --std=c++17  src/window.cpp -o obj/window.o
+g++ -c -Wall --std=c++17  src/main.cpp -o obj/main.o
+g++ -c -Wall --std=c++17  src/buffer.cpp -o obj/buffer.o
+g++  obj/view.o  obj/editor.o  obj/quantum.o  obj/window.o  obj/main.o  obj/buffer.o -lncurses -o quantum
+make: Leaving directory '/home/momo/workspace/Quantum'
+ 

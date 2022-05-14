@@ -8,8 +8,8 @@ struct CursorInfo
     int x;
     int y;
 
-    void move_up() { y++; }
-    void move_down() { y--; }
+    void move_up() { y--; }
+    void move_down() { y++; }
     void move_left() { x--; }
     void move_right() { x++; }
 };

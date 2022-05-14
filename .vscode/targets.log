@@ -1,0 +1,329 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2014 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat May 14 11:56:12 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
+# default
+.SHELLFLAGS := -c
+# makefile (from 'makefile', line 10)
+OBJ :=  obj/view.o  obj/editor.o  obj/quantum.o  obj/window.o  obj/main.o  obj/buffer.o
+# makefile (from 'makefile', line 9)
+SRC := src/view.cpp src/editor.cpp src/quantum.cpp src/window.cpp src/main.cpp src/buffer.cpp
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# makefile (from 'makefile', line 11)
+EXE := quantum
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /home/momo/workspace/Quantum
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{}}
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from 'makefile', line 2)
+CXXFLAGS := -c -Wall --std=c++17 
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_CWD = /mnt/d/Users/Administrator/AppData/Local/Programs/Microsoft VS Code
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/momo/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Python310/Scripts/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/d/Program Files/Bandizip/:/mnt/d/Program Files/CodeBlocks/MinGW/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/d/Program Files/Git/cmd:/mnt/c/Qt/6.2.4/mingw_64/bin:/mnt/d/Program Files/nodejs/:/mnt/d/Program Files/Racket:/mnt/e/gitfact/ffmpeg-5.0.1/bin:/mnt/d/Users/Administrator/AppData/Local/Programs/Python/Python39/:/mnt/d/Users/Administrator/AppData/Local/Programs/Python/Python39/Scripts:/mnt/c/Users/Administrator/AppData/Local/Microsoft/WindowsApps:/mnt/d/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Administrator/AppData/Roaming/npm:/mnt/d/Users/Administrator/AppData/Local/Programs/Fiddler
+# makefile (from 'makefile', line 3)
+LD := g++
+# environment
+VSCODE_LOG_STACK = false
+# makefile (from 'makefile', line 4)
+LDFLAGS := -lncurses
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'makefile', line 6)
+SRCDIR := src
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/momo/workspace/Quantum
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-5ac61679-d89a-4fd9-a744-97a059de0edf.sock
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/momo
+# environment
+LOGNAME = momo
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# default
+MAKE_VERSION := 4.1
+# environment
+USER = momo
+# makefile
+.DEFAULT_GOAL := all
+# environment
+NAME = momo-computer
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Administrator/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.2
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# makefile (from 'makefile', line 7)
+OBJDIR := obj
+# makefile (from 'makefile', line 1)
+CXX := g++
+# environment
+LC_ALL = C
+# environment
+HOSTTYPE = x86_64
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu-18.04
+# variable set hash-table stats:
+# Load=68/1024=7%, Rehash=0, Collisions=5/112=4%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2, inode 16044073672573393): 17 files, no impossibilities.
+# src (device 2, inode 1407374883949604): 18 files, no impossibilities.
+
+# 35 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+obj/%.o: src/%.cpp
+#  recipe to execute (from 'makefile', line 31):
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+obj/%.o: src/%.cpp src/%.h
+#  recipe to execute (from 'makefile', line 34):
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+# 2 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+obj/buffer.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: quantum
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+
+.PHONY: all clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/editor.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-14 11:50:46.3968516
+#  File has been updated.
+#  Successfully updated.
+
+quantum: obj obj/view.o obj/editor.o obj/quantum.o obj/window.o obj/main.o obj/buffer.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-13 21:15:06.5943848
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'makefile', line 25):
+	$(LD) $(OBJ) $(LDFLAGS) -o $@
+
+# Not a target:
+obj/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-13 16:45:53.4525261
+#  File has been updated.
+#  Successfully updated.
+
+obj/view.o: src/view.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'view'
+#  Last modified 2022-05-13 16:46:05.2874029
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 31):
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+# Not a target:
+obj/window.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj:
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-13 21:15:06.4286852
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 28):
+	mkdir $@
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/editor.o: src/editor.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'editor'
+#  Last modified 2022-05-13 21:15:06.4342055
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/editor.o
+# automatic
+# % := 
+# automatic
+# * := editor
+# automatic
+# + := src/editor.cpp
+# automatic
+# | := 
+# automatic
+# < := src/editor.cpp
+# automatic
+# ^ := src/editor.cpp
+# automatic
+# ? := src/editor.cpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
+#  recipe to execute (from 'makefile', line 31):
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+run: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 18):
+	./$(EXE)
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 21):
+	rm -f $(OBJ)
+	rm -f $(EXE)
+
+# Not a target:
+obj/quantum.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/view.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-13 15:21:31.1207552
+#  File has been updated.
+#  Successfully updated.
+
+# files hash-table stats:
+# Load=17/1024=2%, Rehash=0, Collisions=0/48=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 54 / storage = 499 B / avg = 9 B
+# current buf: size = 8162 B / used = 499 B / count = 54 / avg = 9 B
+
+# strcache performance: lookups = 79 / hit rate = 31%
+# hash-table stats:
+# Load=54/8192=1%, Rehash=0, Collisions=2/79=3%
+# Finished Make data base on Sat May 14 11:56:12 2022
+
+ 

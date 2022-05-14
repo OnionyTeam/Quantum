@@ -2,9 +2,11 @@
 #define _QUANTUM_EDITOR_H__
 
 #include "view.h"
-#include <stack>
+
+class Command;
 class Editor : public View
 {
+    friend Command;
 private:
     EditorInfo _editor_info;
     std::vector<int> _changed_lines;         //it will record which rows have been modified
@@ -12,6 +14,7 @@ private:
 public:
     Editor(const std::string &filename = "", bool active = false, const WindowInfo &info = {0});
     Editor(const EditorInfo &editor_info, const WindowInfo &window_info = {0});
+    void key_input_event(int key);
     void open_file(const std::string &filename);
     void update();
     void set_active(bool k) { _active = k; };

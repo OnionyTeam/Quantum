@@ -2,12 +2,14 @@
 #define _QUANTUM_WINDOW_H__
 
 #include "editor.h"
-
+#include "keymap/keymap.h"
 class Window 
 {
 public:
     Window(const std::string &filename);
+    int loop();
     void update();
+    void update_all();
     void open_file(const std::string &filename);
     ~Window();
 private:

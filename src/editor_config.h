@@ -15,6 +15,7 @@ struct EditorInfo
     std::string filename;
     CursorInfo cursor_info;
     bool refresh_all;
+    bool new_file;
 };
 
 struct WindowInfo 

@@ -14,6 +14,7 @@ Editor::Editor(const std::string &filename, bool active, const WindowInfo &info)
     init();
 }
 
+
 Editor::Editor(const EditorInfo &editor_info, const WindowInfo &window_info)
     : View(window_info), _editor_info(editor_info)
 {
@@ -40,7 +41,7 @@ void Editor::update_buffer()
     if (_editor_info.refresh_all)
     {
         // first, clear the window
-        wclear(window);
+        //wclear(window);
         auto line_num = static_cast<int>(_current_buffer->lines.size());
         for (int i = 0; i < line_num; ++i)
         {
@@ -65,7 +66,9 @@ void Editor::load_file()
     std::ifstream infile(_editor_info.filename);
     if (!infile)
     {
-        //TODO
+        //file does not exist
+        _current_buffer->append_line("");
+        _editor_info.new_file = true;
     }
     else
     {
@@ -77,5 +80,12 @@ void Editor::load_file()
             // _changed_lines.push(i);
             i++;
         }
+        _editor_info.new_file = false;
     }
+}
+
+void Editor::key_input_event(int key)
+{
+    _current_buffer->append_line(std::to_string(key));
+    _editor_info.refresh_all = true;
 }

@@ -3,8 +3,8 @@
 
 #include <vector>
 #include <memory>
-#include "editor_config.h"
 #include <ncurses.h>
+#include "editor_config.h"
 #include "buffer.h"
 
 class View 

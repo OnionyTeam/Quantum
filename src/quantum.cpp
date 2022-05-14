@@ -9,7 +9,6 @@ Quantum::Quantum(int argc, char* argv[])
 {
     parser_init();
     parser.run();
-    ncurses_init();
 }
 
 int Quantum::run()
@@ -18,29 +17,7 @@ int Quantum::run()
     std::string filename = parser.get<std::string>("f");
 
     Window w(filename);
-    while (true)
-        w.update();
-    refresh();
-    getch();
-    endwin();
-
-    return 0;
-}
-
-void Quantum::ncurses_init()
-{
-    // init ncurses screen, making main window too
-    initscr();
-    // change how terminal input works
-    // initialise colours
-    start_color();
-    // don't echo typed characters back
-    noecho();
-    // characters read 1 by 1
-    cbreak();
-    // get all keys
-    keypad(stdscr, true);
-
+    return w.loop();
 }
 
 void Quantum::parser_init()

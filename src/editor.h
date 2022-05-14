@@ -19,6 +19,8 @@ public:
     void update();
     void set_active(bool k) { _active = k; };
     bool active() { return _active; }
+    void type_char(char c);       //type from the current cursor position
+    const EditorInfo& get_editor_info() const { return _editor_info; }
     ~Editor() {}
 private:
     void load_file();

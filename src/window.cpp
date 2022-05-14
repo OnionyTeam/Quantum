@@ -27,13 +27,9 @@ int Window::loop()
     while (true)
     {
         int input = getch();
-        if (isalpha(input))
-        {
-            _current_editor->key_input_event(input);
-        }
+        _current_editor->key_input_event(input);
         update();
     }
-    
     return 0;
 }
 

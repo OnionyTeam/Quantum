@@ -6,6 +6,7 @@ Buffer::Buffer()
 {
 }
 
+
 void Buffer::insert_line(const std::string& line, config::position_type pos)
 {
     this->lines.insert(lines.begin() + pos, line);
@@ -19,4 +20,3 @@ void Buffer::remove_line(config::position_type pos)
 {
     this->lines.erase(lines.begin() + pos);
 }
-

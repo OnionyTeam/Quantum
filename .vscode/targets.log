@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat May 14 17:06:51 2022
+# Make data base, printed on Sat May 14 18:40:20 2022
 
 # Variables
 
@@ -69,7 +69,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/momo/workspace/Quantum
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-c287329a-27bc-4ea2-ba25-f604da104789.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-a41925e4-bb7d-4ecd-946f-b9f028800c1a.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -155,10 +155,10 @@ WSL_DISTRO_NAME = Ubuntu-18.04
 
 # Directories
 
-# . (device 2, inode 16044073672573393): 17 files, no impossibilities.
+# . (device 2, inode 16044073672573393): 16 files, no impossibilities.
 # src (device 2, inode 1407374883949604): 20 files, no impossibilities.
 
-# 37 files, no impossibilities in 2 directories.
+# 36 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -198,13 +198,13 @@ all: quantum
 # Not a target:
 src/editor.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-14 17:05:28.8985541
+#  Last modified 2022-05-14 17:19:15.8376901
 #  File has been updated.
 #  Successfully updated.
 
 quantum: obj obj/view.o obj/editor.o obj/quantum.o obj/window.o obj/main.o obj/buffer.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-14 16:57:02.8887266
+#  Last modified 2022-05-14 17:17:57.6473972
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -242,7 +242,7 @@ obj/window.o:
 
 obj:
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-14 16:57:02.6485378
+#  Last modified 2022-05-14 17:17:57.4242464
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 28):
@@ -257,7 +257,7 @@ obj:
 obj/editor.o: src/editor.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'editor'
-#  Last modified 2022-05-14 16:57:02.6580458
+#  Last modified 2022-05-14 17:17:57.437247
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -318,12 +318,12 @@ src/view.cpp:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 56 / storage = 514 B / avg = 9 B
-# current buf: size = 8162 B / used = 514 B / count = 56 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 55 / storage = 508 B / avg = 9 B
+# current buf: size = 8162 B / used = 508 B / count = 55 / avg = 9 B
 
-# strcache performance: lookups = 81 / hit rate = 30%
+# strcache performance: lookups = 80 / hit rate = 31%
 # hash-table stats:
-# Load=56/8192=1%, Rehash=0, Collisions=2/81=2%
-# Finished Make data base on Sat May 14 17:06:51 2022
+# Load=55/8192=1%, Rehash=0, Collisions=2/80=2%
+# Finished Make data base on Sat May 14 18:40:20 2022
 
  

@@ -10,6 +10,7 @@ class Editor : public View
 private:
     EditorInfo _editor_info;
     std::vector<int> _changed_lines;         //it will record which rows have been modified
+    unsigned int _last_cursor_x;
     bool _active;
 public:
     Editor(const std::string &filename = "", bool active = false, const WindowInfo &info = {0});

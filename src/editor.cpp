@@ -25,6 +25,7 @@ Editor::Editor(const EditorInfo &editor_info, const WindowInfo &window_info)
 void Editor::init()
 {
     WINDOW *window = _window.get();
+    _last_cursor_x = _editor_info.cursor_info.x;
     wmove(window, _editor_info.cursor_info.y,
           _editor_info.cursor_info.x);
     // curs_set(0);
@@ -53,7 +54,6 @@ void Editor::update_buffer()
             wmove(window, _editor_info.cursor_info.y, _editor_info.cursor_info.x);
         wrefresh(window);
         _editor_info.refresh_all = false;
-        // _editor_info.modified = false;
     }
 }
 
@@ -78,7 +78,6 @@ void Editor::load_file()
         while (!std::getline(infile, temp).eof())
         {
             _current_buffer->append_line(temp);
-            // _changed_lines.push(i);
             i++;
         }
         _editor_info.new_file = false;
@@ -109,7 +108,7 @@ void Editor::key_input_event(int key)
     case KEY_UP:
         this->move_up();
         break;
-    case KEY_BACKSPACE: //此处也有问题、、
+    case KEY_BACKSPACE: //有问题、、
     {
 
         if (_editor_info.cursor_info.x == 0 && _editor_info.cursor_info.y == 0) // no charactor could delete
@@ -117,8 +116,17 @@ void Editor::key_input_event(int key)
         else if (_editor_info.cursor_info.x == 0 && _editor_info.cursor_info.y >= 0)
         {
             int y = _editor_info.cursor_info.y;
-            _editor_info.cursor_info.x = static_cast<int>(_current_buffer->lines[y - 1].size());
-            _current_buffer->remove_line(y);
+            if (_current_buffer->lines[y].empty())
+            {
+                _editor_info.cursor_info.x = _current_buffer->lines[y - 1].size();
+                _current_buffer->remove_line(y);
+            }
+            else
+            {
+                //合并两行内容
+                _current_buffer->lines[y-1].append(_current_buffer->lines[y]);
+                _current_buffer->remove_line(y);
+            }
             this->move_up();
             _editor_info.modified = true;
         }
@@ -133,10 +141,13 @@ void Editor::key_input_event(int key)
         }
         break;
     }
-    case '\n':      //此处有问题
+    case '\n':
     {
         int y = _editor_info.cursor_info.y;
-        _current_buffer->insert_line("", y + 1);
+        if (_current_buffer->lines.size() > _editor_info.cursor_info.y)
+            _current_buffer->insert_line("", y + 1);
+        else
+            _current_buffer->append_line("");
         _editor_info.cursor_info.move_down();
         _editor_info.cursor_info.x = 0;
         _editor_info.modified = true;
@@ -149,11 +160,20 @@ void Editor::key_input_event(int key)
 
 void Editor::move_down()
 {
-    if (static_cast<int>(_current_buffer->lines.size()) > _editor_info.cursor_info.y)
+    if (_current_buffer->lines.size() > _editor_info.cursor_info.y)
     {
+        _last_cursor_x = _editor_info.cursor_info.x;
         _editor_info.cursor_info.move_down();
-        _editor_info.cursor_info.x = 
-            _current_buffer->lines[_editor_info.cursor_info.y].size();
+        auto size = _current_buffer->lines[_editor_info.cursor_info.y].size();
+        if (_last_cursor_x < size)
+        {
+            _editor_info.cursor_info.x = _last_cursor_x;
+        }
+        else
+        {
+            _editor_info.cursor_info.x = size;
+            _last_cursor_x = _editor_info.cursor_info.x;
+        }
     }
 }
 
@@ -161,9 +181,18 @@ void Editor::move_up()
 {
     if (_editor_info.cursor_info.y > 0)
     {
+        _last_cursor_x = _editor_info.cursor_info.x;
         _editor_info.cursor_info.move_up();
-        _editor_info.cursor_info.x = 
-            _current_buffer->lines[_editor_info.cursor_info.y].size();
+        auto size = _current_buffer->lines[_editor_info.cursor_info.y].size();
+        if (_last_cursor_x < size)
+        {
+            _editor_info.cursor_info.x = _last_cursor_x;
+        }
+        else
+        {
+            _editor_info.cursor_info.x = size;
+            _last_cursor_x = _editor_info.cursor_info.x;
+        }
     }
 }
 
@@ -175,6 +204,6 @@ void Editor::move_left()
 
 void Editor::move_right()
 {
-    if (static_cast<int>(_current_buffer->lines[_editor_info.cursor_info.y].size()) > _editor_info.cursor_info.x)
+    if (_current_buffer->lines[_editor_info.cursor_info.y].size() > _editor_info.cursor_info.x)
         _editor_info.cursor_info.move_right();
 }

@@ -5,8 +5,8 @@
 
 struct CursorInfo
 {
-    int x;
-    int y;
+    unsigned int x;
+    unsigned int y;
 
     void move_up() { y--; }
     void move_down() { y++; }

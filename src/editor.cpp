@@ -1,5 +1,6 @@
 #include "editor.h"
 #include "editor_helpers.h"
+#include "command/command.h"
 #include <cassert>
 #include <fstream>
 
@@ -114,94 +115,14 @@ void Editor::type_char(char c)
 
 void Editor::key_input_event(int key)
 {
-    switch (key)
+    try
     {
-    case KEY_LEFT:
-        this->move_left();
-        break;
-    case KEY_RIGHT:
-        this->move_right();
-        break;
-    case KEY_DOWN:
-        this->move_down();
-        break;
-    case KEY_UP:
-        this->move_up();
-        break;
-    case KEY_PPAGE:
-        this->scroll_up();
-        break;
-    case KEY_NPAGE:
-        this->scroll_down();
-        break;
-    case KEY_F(1):
-        this->save_file();
-        _status = ViewStatus::EXIT;
-    case KEY_BACKSPACE:
-    {
-
-        if (_cursor_info.x == 0 && _cursor_info.y == 0) // no charactor could delete
-            break;
-        else if (_cursor_info.x == 0 && _cursor_info.y >= 0)
-        {
-            int y = _cursor_info.y;
-            int res_pos = _current_buffer->lines[y-1].size();
-            if (_current_buffer->lines[y].empty())
-            {
-                _cursor_info.x = _current_buffer->lines[y - 1].size();
-                _current_buffer->remove_line(y);
-            }
-            else
-            {
-                //合并两行内容
-                _current_buffer->lines[y-1].append(_current_buffer->lines[y]);
-                _current_buffer->remove_line(y);
-            }
-            _cursor_info.x = res_pos;
-            this->move_up();
-            _editor_info.modified = true;
-        }
-        else
-        {
-            int y = _cursor_info.y;
-            _current_buffer->lines[y].
-                    erase(_cursor_info.x-1, 1);
-            _cursor_info.x--;
-            _editor_info.modified = true;
-            
-        }
-        break;
-    }
-    case '\n':
-    {
-        auto y = _cursor_info.y;
-        auto x = _cursor_info.x;
-        auto size = _current_buffer->lines[y].size();
-        if (x == size)  //若光标在行末
-        {
-            if (_current_buffer->lines.size() > _cursor_info.y)
-                _current_buffer->insert_line("", y + 1);
-            else
-                _current_buffer->append_line("");
-        }
-        else
-        {
-            if (_current_buffer->lines.size() > _cursor_info.y)
-                _current_buffer->insert_line("", y + 1);
-            else
-                _current_buffer->append_line("");
-
-            y = _cursor_info.y;
-            _current_buffer->lines[y+1].append(_current_buffer->lines[y].substr(x));
-            _current_buffer->lines[y].erase(x);
-        }
-        _cursor_info.y++;
-        _cursor_info.x = 0;
+        command_map.at(key_map.at(key))(this);
         _editor_info.modified = true;
-        if (_cursor_info.y - _scroll_y >= static_cast<unsigned int>(config::ncurses_info.lines)) scroll_down();
-        break;
     }
-    default:
+    catch(...)
+    {
         type_char(key);
     }
+    
 }

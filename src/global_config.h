@@ -8,6 +8,7 @@
 #define _QUANTUM_GLOBAL_CONFIG_H__
 
 #include <string>
+#include <assert.h>
 #include <ncurses.h>
 #include "utils.h"
 

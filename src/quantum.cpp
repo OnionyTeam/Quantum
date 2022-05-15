@@ -25,7 +25,6 @@ int Quantum::run()
         w.handle(ch);
         w.update();
     }
-    
     return 0;
 
 }

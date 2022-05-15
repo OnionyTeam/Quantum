@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May 15 14:52:58 2022
+# Make data base, printed on Sun May 15 19:46:09 2022
 
 # Variables
 
@@ -18,9 +18,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
-# makefile (from 'makefile', line 10)
+# makefile (from 'Makefile', line 10)
 OBJ :=  obj/view.o  obj/editor.o  obj/quantum.o  obj/window.o  obj/main.o  obj/buffer.o
-# makefile (from 'makefile', line 9)
+# makefile (from 'Makefile', line 9)
 SRC := src/view.cpp src/editor.cpp src/quantum.cpp src/window.cpp src/main.cpp src/buffer.cpp
 # environment
 VSCODE_LOG_NATIVE = false
@@ -28,7 +28,7 @@ VSCODE_LOG_NATIVE = false
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
-# makefile (from 'makefile', line 11)
+# makefile (from 'Makefile', line 11)
 EXE := quantum.out
 # automatic
 @F = $(notdir $@)
@@ -38,12 +38,12 @@ CURDIR := /home/momo/workspace/Quantum
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{}}
-# makefile (from 'makefile', line 1)
-MAKEFILE_LIST :=  makefile
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
 # 'override' directive
 GNUMAKEFLAGS := 
-# makefile (from 'makefile', line 2)
-CXXFLAGS := -c -Wall --std=c++17 
+# makefile (from 'Makefile', line 2)
+CXXFLAGS := -c -Wall -std=c++17 
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
@@ -52,15 +52,15 @@ VSCODE_CWD = /mnt/d/Users/Administrator/AppData/Local/Programs/Microsoft VS Code
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
 PATH = /home/momo/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Python310/Scripts/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/d/Program Files/Bandizip/:/mnt/d/Program Files/CodeBlocks/MinGW/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/d/Program Files/Git/cmd:/mnt/c/Qt/6.2.4/mingw_64/bin:/mnt/d/Program Files/nodejs/:/mnt/d/Program Files/Racket:/mnt/e/gitfact/ffmpeg-5.0.1/bin:/mnt/d/Users/Administrator/AppData/Local/Programs/Python/Python39/:/mnt/d/Users/Administrator/AppData/Local/Programs/Python/Python39/Scripts:/mnt/c/Users/Administrator/AppData/Local/Microsoft/WindowsApps:/mnt/d/Users/Administrator/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Administrator/AppData/Roaming/npm:/mnt/d/Users/Administrator/AppData/Local/Programs/Fiddler
-# makefile (from 'makefile', line 3)
+# makefile (from 'Makefile', line 3)
 LD := g++
 # environment
 VSCODE_LOG_STACK = false
-# makefile (from 'makefile', line 4)
+# makefile (from 'Makefile', line 4)
 LDFLAGS := -lncurses
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
-# makefile (from 'makefile', line 6)
+# makefile (from 'Makefile', line 6)
 SRCDIR := src
 # automatic
 %F = $(notdir $%)
@@ -69,7 +69,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/momo/workspace/Quantum
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-48d06ff6-c796-4ddf-ac28-eaa39ab9a473.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-a595f27d-456f-42df-b221-ae83e50ac8e4.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -122,9 +122,9 @@ VSCODE_HANDLES_SIGPIPE = true
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# makefile (from 'makefile', line 7)
+# makefile (from 'Makefile', line 7)
 OBJDIR := obj
-# makefile (from 'makefile', line 1)
+# makefile (from 'Makefile', line 1)
 CXX := g++
 # environment
 LC_ALL = C
@@ -147,7 +147,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-18.04
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=5/112=4%
+# Load=68/1024=7%, Rehash=0, Collisions=5/107=5%
 
 # Pattern-specific Variable Values
 
@@ -155,30 +155,33 @@ WSL_DISTRO_NAME = Ubuntu-18.04
 
 # Directories
 
-# . (device 2, inode 16044073672573393): 14 files, no impossibilities.
+# . (device 2, inode 16044073672573393): 15 files, no impossibilities.
 # src (device 2, inode 1407374883949604): 20 files, no impossibilities.
 
-# 34 files, no impossibilities in 2 directories.
+# 35 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 obj/%.o: src/%.cpp
-#  recipe to execute (from 'makefile', line 31):
+#  recipe to execute (from 'Makefile', line 31):
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 obj/%.o: src/%.cpp src/%.h
-#  recipe to execute (from 'makefile', line 34):
+#  recipe to execute (from 'Makefile', line 34):
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 # 2 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
-# Not a target:
-obj/buffer.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/buffer.o: src/buffer.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'buffer'
+#  Last modified 2022-05-15 19:45:15.0463643
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	$(CXX) $(CXXFLAGS) $< -o $@
 
 all: quantum.out
 #  Phony target (prerequisite of .PHONY).
@@ -186,9 +189,7 @@ all: quantum.out
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  Successfully updated.
 
 .PHONY: all clean
 #  Implicit rule search has not been done.
@@ -196,67 +197,74 @@ all: quantum.out
 #  File has not been updated.
 
 # Not a target:
-obj/main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/editor.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-15 19:44:42.4636806
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-makefile:
+src/quantum.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 13:12:30.0933501
+#  Last modified 2022-05-15 18:14:13.0405436
+#  File has been updated.
+#  Successfully updated.
+
+obj/main.o: src/main.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-05-15 19:45:14.2663673
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-15 18:12:53.4325844
 #  File has been updated.
 #  Successfully updated.
 
 obj/view.o: src/view.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'view'
-#  Last modified 2022-05-15 14:28:46.1763859
+#  Last modified 2022-05-15 19:45:09.4975829
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := obj/view.o
-# automatic
-# % := 
-# automatic
-# * := view
-# automatic
-# + := src/view.cpp
-# automatic
-# | := 
-# automatic
-# < := src/view.cpp
-# automatic
-# ^ := src/view.cpp
-# automatic
-# ? := src/view.cpp
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
-#  recipe to execute (from 'makefile', line 31):
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
 	$(CXX) $(CXXFLAGS) $< -o $@
 
-# Not a target:
-obj/window.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/window.o: src/window.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'window'
+#  Last modified 2022-05-15 19:45:13.3213652
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	$(CXX) $(CXXFLAGS) $< -o $@
 
 quantum.out: obj obj/view.o obj/editor.o obj/quantum.o obj/window.o obj/main.o obj/buffer.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-15 14:39:04.5271438
+#  Last modified 2022-05-15 19:45:15.3843654
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
-#  recipe to execute (from 'makefile', line 25):
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 25):
 	$(LD) $(OBJ) $(LDFLAGS) -o $@
+
+# Not a target:
+src/buffer.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-14 13:32:00.2660007
+#  File has been updated.
+#  Successfully updated.
 
 obj:
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-15 14:39:04.3278061
+#  Last modified 2022-05-15 19:45:15.0233675
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 28):
+#  recipe to execute (from 'Makefile', line 28):
 	mkdir $@
 
 # Not a target:
@@ -265,17 +273,20 @@ obj:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-obj/editor.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/editor.o: src/editor.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'editor'
+#  Last modified 2022-05-15 19:45:10.7013276
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	$(CXX) $(CXXFLAGS) $< -o $@
 
 run: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 18):
+#  recipe to execute (from 'Makefile', line 18):
 	./$(EXE)
 
 clean:
@@ -283,15 +294,25 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 21):
+#  recipe to execute (from 'Makefile', line 21):
 	rm -f $(OBJ)
 	rm -f $(EXE)
 
 # Not a target:
-obj/quantum.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-12 15:58:28.9484541
+#  File has been updated.
+#  Successfully updated.
+
+obj/quantum.o: src/quantum.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'quantum'
+#  Last modified 2022-05-15 19:45:12.0173641
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	$(CXX) $(CXXFLAGS) $< -o $@
 
 # Not a target:
 src/view.cpp:
@@ -300,20 +321,27 @@ src/view.cpp:
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+src/window.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-15 14:53:36.1699743
+#  File has been updated.
+#  Successfully updated.
+
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=0/44=0%
+# Load=21/1024=2%, Rehash=0, Collisions=0/64=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 51 / storage = 475 B / avg = 9 B
-# current buf: size = 8162 B / used = 475 B / count = 51 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 62 / storage = 590 B / avg = 9 B
+# current buf: size = 8162 B / used = 590 B / count = 62 / avg = 9 B
 
-# strcache performance: lookups = 75 / hit rate = 32%
+# strcache performance: lookups = 91 / hit rate = 31%
 # hash-table stats:
-# Load=51/8192=1%, Rehash=0, Collisions=2/75=3%
-# Finished Make data base on Sun May 15 14:52:58 2022
+# Load=62/8192=1%, Rehash=0, Collisions=3/91=3%
+# Finished Make data base on Sun May 15 19:46:09 2022
 
  

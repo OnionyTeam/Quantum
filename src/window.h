@@ -3,18 +3,30 @@
 
 #include "editor.h"
 #include "keymap/keymap.h"
+
+enum class WindowStatus
+{
+    NORMAL,
+    QUIT
+};
+
 class Window 
 {
+private:
+    std::vector<std::shared_ptr<View>> _views;
+    std::shared_ptr<View> _current_view;
+    WindowStatus _status;
 public:
-    Window(const std::string &filename);
-    int loop();
+    Window();
+    void add_view(std::shared_ptr<View> view, bool active = false);
+    void set_active(std::shared_ptr<View>& view) { _current_view = view; view->set_active(true); };
+    const std::shared_ptr<View> get_current_view() const { return _current_view; };
+    std::shared_ptr<View> get_current_view() { return _current_view; };
+    const WindowStatus status() const { return _status; };
+    void handle(int key);
     void update();
     void update_all();
-    void open_file(const std::string &filename);
     ~Window();
-private:
-    std::vector<std::shared_ptr<Editor>> _editors;
-    std::shared_ptr<Editor> _current_editor;
 };
 
 #endif //_QUANTUM_WINDOW_H__

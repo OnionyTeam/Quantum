@@ -1,5 +1,7 @@
 #include <ncurses.h>
 
+#define ctrl(x)           ((x) & 0x1f)
+
 void init_ncurses()
 {
     // init ncurses screen, making main window too
@@ -13,5 +15,4 @@ void init_ncurses()
     cbreak();
     // get all keys
     keypad(stdscr, true);
-
 }

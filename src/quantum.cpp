@@ -16,8 +16,18 @@ int Quantum::run()
     // Parse the args
     std::string filename = parser.get<std::string>("f");
 
-    Window w(filename);
-    return w.loop();
+    Window w;
+    auto editor = std::make_shared<Editor>(filename);
+    w.add_view(editor, true);
+    while (w.status() != WindowStatus::QUIT)
+    {
+        int ch = getch();
+        w.handle(ch);
+        w.update();
+    }
+    
+    return 0;
+
 }
 
 void Quantum::parser_init()

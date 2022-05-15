@@ -7,22 +7,18 @@ struct Command
 {
     static void cursor_move_up(Editor *e)
     {
-        e->_editor_info.cursor_info.y++;
     }
 
     static void cursor_move_down(Editor *e)
     {
-        e->_editor_info.cursor_info.y--;
     }
 
     static void cursor_move_left(Editor *e)
     {
-        e->_editor_info.cursor_info.x--;
     }
 
     static void cursor_move_right(Editor *e)
     {
-        e->_editor_info.cursor_info.x++;
     }
 };
 

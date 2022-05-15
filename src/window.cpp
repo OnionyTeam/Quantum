@@ -2,51 +2,47 @@
 #include "editor.h"
 #include "utils.h"
 #include <cassert>
-Window::Window(const std::string &filename) 
-    : _editors()
+Window::Window() 
+    : _views()
 {
     init_ncurses();
-    auto editor = std::make_shared<Editor>(filename, true);
-    _current_editor = editor;
-    _editors.push_back(editor);
-    
-    update_all();
+}
+
+void Window::add_view(std::shared_ptr<View> view, bool active)
+{
+    _views.push_back(view);
+    if (active)
+    {
+        _current_view = view;
+        view->set_active(true);
+    }
+}
+
+void Window::handle(int key)
+{
+    switch (key)
+    {
+    case ctrl('q'):        //ESC or ALT
+        _status = WindowStatus::QUIT;
+        break;
+    default:
+        _current_view->key_input_event(key);
+    }
 }
 
 void Window::update_all()
 {
     //update all
-    for (auto &e : _editors) {
+    for (auto &e : _views) {
         e->update();
     }
 
 }
 
-int Window::loop()
-{
-    while (true)
-    {
-        int input = getch();
-        _current_editor->key_input_event(input);
-        update();
-    }
-    return 0;
-}
-
-void Window::open_file(const std::string &filename)
-{
-    if (!_editors.empty()) {
-        _current_editor->open_file(filename);
-    } else {
-        auto editor = std::make_shared<Editor>(filename);
-        _current_editor = editor;
-        _editors.push_back(editor);
-    }
-}
 void Window::update()
 {
-    //just update current editor
-    _current_editor->update();
+    //just update current view
+    _current_view->update();
 }
 
 Window::~Window()

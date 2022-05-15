@@ -4,10 +4,11 @@
 #include <fstream>
 
 Editor::Editor(const std::string &filename, bool active, const WindowInfo &info)
-    : View(info), _active(active)
+    : View(info)
 {
+    _active = active;
     _editor_info.filename = filename;
-    _editor_info.cursor_info = {0};
+    _cursor_info = {0};
     _editor_info.refresh_all = true;
     _editor_info.modified = false;
 
@@ -25,10 +26,9 @@ Editor::Editor(const EditorInfo &editor_info, const WindowInfo &window_info)
 void Editor::init()
 {
     WINDOW *window = _window.get();
-    _last_cursor_x = _editor_info.cursor_info.x;
-    wmove(window, _editor_info.cursor_info.y,
-          _editor_info.cursor_info.x);
-    // curs_set(0);
+    _last_cursor_x = _cursor_info.x;
+    wmove(window, _cursor_info.y,
+          _cursor_info.x);
 }
 void Editor::open_file(const std::string &filename)
 {
@@ -38,28 +38,27 @@ void Editor::update_buffer()
 {
     // just update the area which changed
     WINDOW *window = _window.get();
-    assert(window != nullptr);
-    if (_editor_info.refresh_all || _editor_info.modified)
+    // first, clear the window
+    werase(window);
+    auto line_num = static_cast<int>(_current_buffer->lines.size());
+    for (int i = 0; i < line_num; ++i)
     {
-        // first, clear the window
-        werase(window);
-        auto line_num = static_cast<int>(_current_buffer->lines.size());
-        for (int i = 0; i < line_num; ++i)
-        {
-            // print the buffer
-            mvwaddstr(window, i, 0,
-                      _current_buffer->lines[i].c_str());
-        }
-        if (_active)
-            wmove(window, _editor_info.cursor_info.y, _editor_info.cursor_info.x);
-        wrefresh(window);
-        _editor_info.refresh_all = false;
+        // print the buffer
+        mvwaddstr(window, i, 0,
+                    _current_buffer->lines[i].c_str());
     }
+    if (_active)
+        wmove(window, _cursor_info.y, _cursor_info.x);
+    wrefresh(window);
 }
 
 void Editor::update()
 {
-    update_buffer();
+    if (_editor_info.refresh_all || _editor_info.modified)
+    {
+        update_buffer();
+        _editor_info.refresh_all = false;
+    }
 }
 
 void Editor::load_file()
@@ -86,10 +85,13 @@ void Editor::load_file()
 
 void Editor::type_char(char c)
 {
-    std::string &current_line = _current_buffer->lines[_editor_info.cursor_info.y];
-    current_line.insert(current_line.begin() + _editor_info.cursor_info.x, c);
-    _editor_info.cursor_info.x++;
-    _editor_info.modified = true;
+    if (!_editor_info.read_only)
+    {
+        std::string &current_line = _current_buffer->lines[_cursor_info.y];
+        current_line.insert(current_line.begin() + _cursor_info.x, c);
+        _cursor_info.x++;
+        _editor_info.modified = true;
+    }
 }
 
 void Editor::key_input_event(int key)
@@ -111,14 +113,15 @@ void Editor::key_input_event(int key)
     case KEY_BACKSPACE: //有问题、、
     {
 
-        if (_editor_info.cursor_info.x == 0 && _editor_info.cursor_info.y == 0) // no charactor could delete
+        if (_cursor_info.x == 0 && _cursor_info.y == 0) // no charactor could delete
             break;
-        else if (_editor_info.cursor_info.x == 0 && _editor_info.cursor_info.y >= 0)
+        else if (_cursor_info.x == 0 && _cursor_info.y >= 0)
         {
-            int y = _editor_info.cursor_info.y;
+            int y = _cursor_info.y;
+            int res_pos = _current_buffer->lines[y-1].size();
             if (_current_buffer->lines[y].empty())
             {
-                _editor_info.cursor_info.x = _current_buffer->lines[y - 1].size();
+                _cursor_info.x = _current_buffer->lines[y - 1].size();
                 _current_buffer->remove_line(y);
             }
             else
@@ -127,15 +130,16 @@ void Editor::key_input_event(int key)
                 _current_buffer->lines[y-1].append(_current_buffer->lines[y]);
                 _current_buffer->remove_line(y);
             }
+            _cursor_info.x = res_pos;
             this->move_up();
             _editor_info.modified = true;
         }
         else
         {
-            int y = _editor_info.cursor_info.y;
+            int y = _cursor_info.y;
             _current_buffer->lines[y].
-                    erase(_editor_info.cursor_info.x-1, 1);
-            _editor_info.cursor_info.move_left();
+                    erase(_cursor_info.x-1, 1);
+            _cursor_info.x--;
             _editor_info.modified = true;
             
         }
@@ -143,67 +147,33 @@ void Editor::key_input_event(int key)
     }
     case '\n':
     {
-        int y = _editor_info.cursor_info.y;
-        if (_current_buffer->lines.size() > _editor_info.cursor_info.y)
-            _current_buffer->insert_line("", y + 1);
+        auto y = _cursor_info.y;
+        auto x = _cursor_info.x;
+        auto size = _current_buffer->lines[y].size();
+        if (x == size)
+        {
+            if (_current_buffer->lines.size() > _cursor_info.y)
+                _current_buffer->insert_line("", y + 1);
+            else
+                _current_buffer->append_line("");
+        }
         else
-            _current_buffer->append_line("");
-        _editor_info.cursor_info.move_down();
-        _editor_info.cursor_info.x = 0;
+        {
+            if (_current_buffer->lines.size() > _cursor_info.y)
+                _current_buffer->insert_line("", y + 1);
+            else
+                _current_buffer->append_line("");
+
+            y = _cursor_info.y;
+            _current_buffer->lines[y+1].append(_current_buffer->lines[y].substr(x));
+            _current_buffer->lines[y].erase(x);
+        }
+        _cursor_info.y++;
+        _cursor_info.x = 0;
         _editor_info.modified = true;
         break;
     }
     default:
         type_char(key);
     }
-}
-
-void Editor::move_down()
-{
-    if (_current_buffer->lines.size() > _editor_info.cursor_info.y)
-    {
-        _last_cursor_x = _editor_info.cursor_info.x;
-        _editor_info.cursor_info.move_down();
-        auto size = _current_buffer->lines[_editor_info.cursor_info.y].size();
-        if (_last_cursor_x < size)
-        {
-            _editor_info.cursor_info.x = _last_cursor_x;
-        }
-        else
-        {
-            _editor_info.cursor_info.x = size;
-            _last_cursor_x = _editor_info.cursor_info.x;
-        }
-    }
-}
-
-void Editor::move_up()
-{
-    if (_editor_info.cursor_info.y > 0)
-    {
-        _last_cursor_x = _editor_info.cursor_info.x;
-        _editor_info.cursor_info.move_up();
-        auto size = _current_buffer->lines[_editor_info.cursor_info.y].size();
-        if (_last_cursor_x < size)
-        {
-            _editor_info.cursor_info.x = _last_cursor_x;
-        }
-        else
-        {
-            _editor_info.cursor_info.x = size;
-            _last_cursor_x = _editor_info.cursor_info.x;
-        }
-    }
-}
-
-void Editor::move_left()
-{
-    if (_editor_info.cursor_info.x > 0)
-        _editor_info.cursor_info.move_left();
-}
-
-void Editor::move_right()
-{
-    if (_current_buffer->lines[_editor_info.cursor_info.y].size() > _editor_info.cursor_info.x)
-        _editor_info.cursor_info.move_right();
 }

@@ -6,12 +6,12 @@ int main()
 {
     initscr();
     start_color();
-    refresh();
-    WINDOW* win = newwin(0,0,0,0);
-    mvwprintw(win, 0, 0, "HELLO, WORLD!");
-    wrefresh(win);
-//    refresh();
+    cbreak();
+    noecho();
+    int a = getch();
+    int b = getch();
+    int c = getch();
+    printw("%d %d %d", a, b, c);
     getch();
-    delwin(win);
     endwin();
 }

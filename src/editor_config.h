@@ -7,21 +7,16 @@ struct CursorInfo
 {
     unsigned int x;
     unsigned int y;
-
-    void move_up() { y--; }
-    void move_down() { y++; }
-    void move_left() { x--; }
-    void move_right() { x++; }
 };
 
 // this struct saved editor's config
 struct EditorInfo
 {
     std::string filename;
-    CursorInfo cursor_info;
     bool refresh_all;
     bool new_file;
     bool modified;
+    bool read_only;
 };
 
 struct WindowInfo 

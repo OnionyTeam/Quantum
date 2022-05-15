@@ -1,11 +1,10 @@
 #include "window.h"
 #include "editor.h"
-#include "utils.h"
 #include <cassert>
+
 Window::Window() 
     : _views()
 {
-    init_ncurses();
 }
 
 void Window::add_view(std::shared_ptr<View> view, bool active)
@@ -22,11 +21,16 @@ void Window::handle(int key)
 {
     switch (key)
     {
-    case ctrl('q'):        //ESC or ALT
+    case KEY_F(1):        //ESC or ALT
         _status = WindowStatus::QUIT;
         break;
     default:
         _current_view->key_input_event(key);
+    }
+    if (_current_view->status() == ViewStatus::EXIT)
+    {
+        if (_views.size() == 1)
+            _status = WindowStatus::QUIT;
     }
 }
 
@@ -47,5 +51,4 @@ void Window::update()
 
 Window::~Window()
 {
-    endwin();
 }

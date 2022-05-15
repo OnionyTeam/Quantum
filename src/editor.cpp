@@ -41,14 +41,15 @@ void Editor::update_buffer()
     // first, clear the window
     werase(window);
     auto line_num = static_cast<int>(_current_buffer->lines.size());
-    for (int i = 0; i < line_num; ++i)
+    auto lines = std::min(config::ncurses_info.lines, line_num);
+    for (int i = 0; i < lines; ++i)
     {
         // print the buffer
         mvwaddstr(window, i, 0,
-                    _current_buffer->lines[i].c_str());
+                    _current_buffer->lines[_scroll_y + i].c_str() + _scroll_x);
     }
-    if (_active)
-        wmove(window, _cursor_info.y, _cursor_info.x);
+    if (_active)    //local pos
+        wmove(window, _cursor_info.y - _scroll_y, _cursor_info.x - _scroll_x);
     wrefresh(window);
 }
 
@@ -60,6 +61,22 @@ void Editor::update()
         _editor_info.refresh_all = false;
     }
 }
+
+void Editor::save_file()
+{
+    if (_editor_info.filename.empty())
+        _editor_info.filename = "untitled";
+
+    std::ofstream f(_editor_info.filename);
+
+    if(f.is_open()) {
+        for(size_t i=0; i< _current_buffer->lines.size(); i++) {
+            f << _current_buffer->lines[i] << std::endl;
+        }
+    }
+    f.close();   
+}
+
 
 void Editor::load_file()
 {
@@ -87,6 +104,7 @@ void Editor::type_char(char c)
 {
     if (!_editor_info.read_only)
     {
+        assert(_cursor_info.y >= 0 && _cursor_info.y < _current_buffer->lines.size());
         std::string &current_line = _current_buffer->lines[_cursor_info.y];
         current_line.insert(current_line.begin() + _cursor_info.x, c);
         _cursor_info.x++;
@@ -110,7 +128,16 @@ void Editor::key_input_event(int key)
     case KEY_UP:
         this->move_up();
         break;
-    case KEY_BACKSPACE: //有问题、、
+    case KEY_PPAGE:
+        this->scroll_up();
+        break;
+    case KEY_NPAGE:
+        this->scroll_down();
+        break;
+    case KEY_F(1):
+        this->save_file();
+        _status = ViewStatus::EXIT;
+    case KEY_BACKSPACE:
     {
 
         if (_cursor_info.x == 0 && _cursor_info.y == 0) // no charactor could delete
@@ -150,7 +177,7 @@ void Editor::key_input_event(int key)
         auto y = _cursor_info.y;
         auto x = _cursor_info.x;
         auto size = _current_buffer->lines[y].size();
-        if (x == size)
+        if (x == size)  //若光标在行末
         {
             if (_current_buffer->lines.size() > _cursor_info.y)
                 _current_buffer->insert_line("", y + 1);
@@ -171,6 +198,7 @@ void Editor::key_input_event(int key)
         _cursor_info.y++;
         _cursor_info.x = 0;
         _editor_info.modified = true;
+        if (_cursor_info.y - _scroll_y >= static_cast<unsigned int>(config::ncurses_info.lines)) scroll_down();
         break;
     }
     default:

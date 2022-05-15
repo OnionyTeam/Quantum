@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May 15 12:05:31 2022
+# Make data base, printed on Sun May 15 14:52:58 2022
 
 # Variables
 
@@ -29,7 +29,7 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # makefile (from 'makefile', line 11)
-EXE := quantum
+EXE := quantum.out
 # automatic
 @F = $(notdir $@)
 # makefile
@@ -69,7 +69,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/momo/workspace/Quantum
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-16c13fda-6902-4360-96c7-66945d11916b.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-48d06ff6-c796-4ddf-ac28-eaa39ab9a473.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -147,7 +147,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-18.04
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=5/107=5%
+# Load=68/1024=7%, Rehash=0, Collisions=5/112=4%
 
 # Pattern-specific Variable Values
 
@@ -155,10 +155,10 @@ WSL_DISTRO_NAME = Ubuntu-18.04
 
 # Directories
 
-# . (device 2, inode 16044073672573393): 16 files, no impossibilities.
+# . (device 2, inode 16044073672573393): 14 files, no impossibilities.
 # src (device 2, inode 1407374883949604): 20 files, no impossibilities.
 
-# 36 files, no impossibilities in 2 directories.
+# 34 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -174,22 +174,21 @@ obj/%.o: src/%.cpp src/%.h
 
 # Files
 
-obj/buffer.o: src/buffer.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'buffer'
-#  Last modified 2022-05-14 13:35:37.9885294
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
+# Not a target:
+obj/buffer.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-all: quantum
+all: quantum.out
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 
 .PHONY: all clean
 #  Implicit rule search has not been done.
@@ -197,71 +196,64 @@ all: quantum
 #  File has not been updated.
 
 # Not a target:
-src/editor.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-14 19:59:00.9666579
-#  File has been updated.
-#  Successfully updated.
-
-quantum: obj obj/view.o obj/editor.o obj/quantum.o obj/window.o obj/main.o obj/buffer.o
+obj/main.o:
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-15 08:17:32.4340274
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 25):
-	$(LD) $(OBJ) $(LDFLAGS) -o $@
-
-obj/main.o: src/main.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'main'
-#  Last modified 2022-05-14 12:29:15.2305344
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-# Not a target:
-src/quantum.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-14 12:33:33.0217271
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-14 12:25:38.7526746
+#  Last modified 2022-05-15 13:12:30.0933501
 #  File has been updated.
 #  Successfully updated.
 
 obj/view.o: src/view.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'view'
-#  Last modified 2022-05-14 12:28:56.6564073
+#  Last modified 2022-05-15 14:28:46.1763859
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-obj/window.o: src/window.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'window'
-#  Last modified 2022-05-15 08:17:31.9540681
-#  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/view.o
+# automatic
+# % := 
+# automatic
+# * := view
+# automatic
+# + := src/view.cpp
+# automatic
+# | := 
+# automatic
+# < := src/view.cpp
+# automatic
+# ^ := src/view.cpp
+# automatic
+# ? := src/view.cpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
 #  recipe to execute (from 'makefile', line 31):
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 # Not a target:
-src/buffer.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-14 13:32:00.2660007
+obj/window.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quantum.out: obj obj/view.o obj/editor.o obj/quantum.o obj/window.o obj/main.o obj/buffer.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-15 14:39:04.5271438
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'makefile', line 25):
+	$(LD) $(OBJ) $(LDFLAGS) -o $@
 
 obj:
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-15 08:17:31.8009566
+#  Last modified 2022-05-15 14:39:04.3278061
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 28):
@@ -273,14 +265,11 @@ obj:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/editor.o: src/editor.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'editor'
-#  Last modified 2022-05-14 19:59:02.1640385
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
+# Not a target:
+obj/editor.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 run: all
 #  Implicit rule search has not been done.
@@ -299,49 +288,32 @@ clean:
 	rm -f $(EXE)
 
 # Not a target:
-src/main.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-12 15:58:28.9484541
-#  File has been updated.
-#  Successfully updated.
-
-obj/quantum.o: src/quantum.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'quantum'
-#  Last modified 2022-05-14 12:36:33.9020077
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
+obj/quantum.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/view.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-13 15:21:31.1207552
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/window.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-15 08:15:09.665033
+#  Last modified 2022-05-15 14:41:09.0370531
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=21/1024=2%, Rehash=0, Collisions=3/64=5%
+# Load=16/1024=2%, Rehash=0, Collisions=0/44=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 62 / storage = 586 B / avg = 9 B
-# current buf: size = 8162 B / used = 586 B / count = 62 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 51 / storage = 475 B / avg = 9 B
+# current buf: size = 8162 B / used = 475 B / count = 51 / avg = 9 B
 
-# strcache performance: lookups = 92 / hit rate = 32%
+# strcache performance: lookups = 75 / hit rate = 32%
 # hash-table stats:
-# Load=62/8192=1%, Rehash=0, Collisions=3/92=3%
-# Finished Make data base on Sun May 15 12:05:31 2022
+# Load=51/8192=1%, Rehash=0, Collisions=2/75=3%
+# Finished Make data base on Sun May 15 14:52:58 2022
 
  

@@ -7,6 +7,6 @@ g++ -c -Wall --std=c++17  src/quantum.cpp -o obj/quantum.o
 g++ -c -Wall --std=c++17  src/window.cpp -o obj/window.o
 g++ -c -Wall --std=c++17  src/main.cpp -o obj/main.o
 g++ -c -Wall --std=c++17  src/buffer.cpp -o obj/buffer.o
-g++  obj/view.o  obj/editor.o  obj/quantum.o  obj/window.o  obj/main.o  obj/buffer.o -lncurses -o quantum
+g++  obj/view.o  obj/editor.o  obj/quantum.o  obj/window.o  obj/main.o  obj/buffer.o -lncurses -o quantum.out
 make: Leaving directory '/home/momo/workspace/Quantum'
  

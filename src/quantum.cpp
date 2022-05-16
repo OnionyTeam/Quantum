@@ -1,6 +1,6 @@
 #include "quantum.h"
 #include <iostream>
-#include <ncurses.h>
+#include <ncursesw/ncurses.h>
 #include "window.h"
 #include "global_config.h"
 
@@ -21,7 +21,8 @@ int Quantum::run()
     w.add_view(editor, true);
     while (w.status() != WindowStatus::QUIT)
     {
-        int ch = getch();
+        wint_t ch;
+        get_wch(&ch);
         w.handle(ch);
         w.update();
     }

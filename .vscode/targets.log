@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May 15 19:46:09 2022
+# Make data base, printed on Mon May 16 19:48:48 2022
 
 # Variables
 
@@ -57,7 +57,7 @@ LD := g++
 # environment
 VSCODE_LOG_STACK = false
 # makefile (from 'Makefile', line 4)
-LDFLAGS := -lncurses
+LDFLAGS := -lncursesw -I/usr/include/ncursesw
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # makefile (from 'Makefile', line 6)
@@ -69,7 +69,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/momo/workspace/Quantum
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-a595f27d-456f-42df-b221-ae83e50ac8e4.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-c561dd37-6c34-4e56-bbe8-c9fe3d7f11b4.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -143,6 +143,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
+ 
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-18.04
@@ -155,10 +156,10 @@ WSL_DISTRO_NAME = Ubuntu-18.04
 
 # Directories
 
-# . (device 2, inode 16044073672573393): 15 files, no impossibilities.
-# src (device 2, inode 1407374883949604): 20 files, no impossibilities.
+# . (device 2, inode 16044073672573393): 14 files, no impossibilities.
+# src (device 2, inode 1407374883949604): 19 files, no impossibilities.
 
-# 35 files, no impossibilities in 2 directories.
+# 33 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -177,7 +178,7 @@ obj/%.o: src/%.cpp src/%.h
 obj/buffer.o: src/buffer.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'buffer'
-#  Last modified 2022-05-15 19:45:15.0463643
+#  Last modified 2022-05-16 19:48:03.9698826
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
@@ -199,21 +200,21 @@ all: quantum.out
 # Not a target:
 src/editor.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 19:44:42.4636806
+#  Last modified 2022-05-16 19:47:56.6577871
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/quantum.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 18:14:13.0405436
+#  Last modified 2022-05-16 19:28:36.4773221
 #  File has been updated.
 #  Successfully updated.
 
 obj/main.o: src/main.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-05-15 19:45:14.2663673
+#  Last modified 2022-05-16 19:48:03.5011332
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
@@ -222,14 +223,14 @@ obj/main.o: src/main.cpp
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 18:12:53.4325844
+#  Last modified 2022-05-16 19:27:04.6590198
 #  File has been updated.
 #  Successfully updated.
 
 obj/view.o: src/view.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'view'
-#  Last modified 2022-05-15 19:45:09.4975829
+#  Last modified 2022-05-16 19:35:49.991142
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
@@ -238,7 +239,7 @@ obj/view.o: src/view.cpp
 obj/window.o: src/window.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'window'
-#  Last modified 2022-05-15 19:45:13.3213652
+#  Last modified 2022-05-16 19:48:02.9386328
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
@@ -246,7 +247,7 @@ obj/window.o: src/window.cpp
 
 quantum.out: obj obj/view.o obj/editor.o obj/quantum.o obj/window.o obj/main.o obj/buffer.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-15 19:45:15.3843654
+#  Last modified 2022-05-16 19:48:04.3448836
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 25):
@@ -255,13 +256,13 @@ quantum.out: obj obj/view.o obj/editor.o obj/quantum.o obj/window.o obj/main.o o
 # Not a target:
 src/buffer.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-14 13:32:00.2660007
+#  Last modified 2022-05-16 19:35:34.8591576
 #  File has been updated.
 #  Successfully updated.
 
 obj:
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-15 19:45:15.0233675
+#  Last modified 2022-05-16 19:48:03.9542566
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 28):
@@ -276,7 +277,7 @@ obj:
 obj/editor.o: src/editor.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'editor'
-#  Last modified 2022-05-15 19:45:10.7013276
+#  Last modified 2022-05-16 19:48:01.5167604
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
@@ -308,7 +309,7 @@ src/main.cpp:
 obj/quantum.o: src/quantum.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'quantum'
-#  Last modified 2022-05-15 19:45:12.0173641
+#  Last modified 2022-05-16 19:48:02.4698825
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
@@ -317,14 +318,14 @@ obj/quantum.o: src/quantum.cpp
 # Not a target:
 src/view.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 14:41:09.0370531
+#  Last modified 2022-05-16 18:48:16.5814023
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/window.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 14:53:36.1699743
+#  Last modified 2022-05-16 18:56:23.135343
 #  File has been updated.
 #  Successfully updated.
 
@@ -336,12 +337,12 @@ src/window.cpp:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 62 / storage = 590 B / avg = 9 B
-# current buf: size = 8162 B / used = 590 B / count = 62 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 60 / storage = 577 B / avg = 9 B
+# current buf: size = 8162 B / used = 577 B / count = 60 / avg = 9 B
 
-# strcache performance: lookups = 91 / hit rate = 31%
+# strcache performance: lookups = 89 / hit rate = 32%
 # hash-table stats:
-# Load=62/8192=1%, Rehash=0, Collisions=3/91=3%
-# Finished Make data base on Sun May 15 19:46:09 2022
+# Load=60/8192=1%, Rehash=0, Collisions=3/89=3%
+# Finished Make data base on Mon May 16 19:48:48 2022
 
  

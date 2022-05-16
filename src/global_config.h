@@ -9,7 +9,7 @@
 
 #include <string>
 #include <assert.h>
-#include <ncurses.h>
+#include <ncursesw/ncurses.h>
 #include "utils.h"
 
 // program description
@@ -26,6 +26,7 @@ namespace config {
         int lines;
 
         NcursesInfo() {
+            setlocale(LC_ALL, "");
             // init ncurses screen, making main window too
             initscr();
             // change how terminal input works

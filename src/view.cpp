@@ -11,7 +11,7 @@ View::View(const WindowInfo &info)
     [](WINDOW* w){
         delwin(w);
     });
-    redrawwin(_window.get());
+    // redrawwin(_window.get());
 }
 
 void View::move_down()

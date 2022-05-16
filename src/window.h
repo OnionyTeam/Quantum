@@ -2,7 +2,6 @@
 #define _QUANTUM_WINDOW_H__
 
 #include "editor.h"
-#include "keymap/keymap.h"
 
 enum class WindowStatus
 {
@@ -23,7 +22,7 @@ public:
     const std::shared_ptr<View> get_current_view() const { return _current_view; };
     std::shared_ptr<View> get_current_view() { return _current_view; };
     const WindowStatus status() const { return _status; };
-    void handle(int key);
+    void handle(wint_t key);
     void update();
     void update_all();
     ~Window();

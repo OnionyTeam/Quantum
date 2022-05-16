@@ -17,10 +17,10 @@ public:
     void open_file(const std::string &filename);
     void save_file();
 
-    void key_input_event(int key) override;
+    void key_input_event(wint_t key) override;
     void update() override;
     void update_buffer();
-    void type_char(char c);       //type from the current cursor position
+    void type_char(wchar_t c);       //type from the current cursor position
     const EditorInfo& get_editor_info() const { return _editor_info; }
 
     ~Editor() {}

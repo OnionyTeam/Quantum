@@ -1,7 +1,7 @@
 CXX := g++
 CXXFLAGS := -c -Wall -std=c++17 
 LD := g++
-LDFLAGS := -lncurses
+LDFLAGS := -lncursesw -I/usr/include/ncursesw
 
 SRCDIR := src
 OBJDIR := obj

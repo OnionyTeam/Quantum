@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <memory>
-#include <ncurses.h>
+#include <ncursesw/ncurses.h>
 #include "editor_config.h"
 #include "buffer.h"
 
@@ -30,7 +30,7 @@ protected:
 public:
     View(const WindowInfo &info = {0});
     virtual void update() {};
-    virtual void key_input_event(int key) {};
+    virtual void key_input_event(wint_t key) {};
     void set_active(bool k) { _active = k; }
     bool active() const { return _active; }
     ViewStatus status() { return _status; }

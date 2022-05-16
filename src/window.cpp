@@ -17,11 +17,11 @@ void Window::add_view(std::shared_ptr<View> view, bool active)
     }
 }
 
-void Window::handle(int key)
+void Window::handle(wint_t key)
 {
     switch (key)
     {
-    case KEY_F(1):        //ESC or ALT
+    case KEY_F(1):
         _status = WindowStatus::QUIT;
         break;
     default:

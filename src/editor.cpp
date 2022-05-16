@@ -46,7 +46,7 @@ void Editor::update_buffer()
     for (int i = 0; i < lines; ++i)
     {
         // print the buffer
-        mvwaddstr(window, i, 0,
+        mvwaddwstr(window, i, 0,
                     _current_buffer->lines[_scroll_y + i].c_str() + _scroll_x);
     }
     if (_active)    //local pos
@@ -68,7 +68,7 @@ void Editor::save_file()
     if (_editor_info.filename.empty())
         _editor_info.filename = "untitled";
 
-    std::ofstream f(_editor_info.filename);
+    std::wofstream f(_editor_info.filename);
 
     if(f.is_open()) {
         for(size_t i=0; i< _current_buffer->lines.size(); i++) {
@@ -81,16 +81,16 @@ void Editor::save_file()
 
 void Editor::load_file()
 {
-    std::ifstream infile(_editor_info.filename);
+    std::wifstream infile(_editor_info.filename);
     if (!infile)
     {
         // file does not exist
-        _current_buffer->append_line("");
+        _current_buffer->append_line(L"");
         _editor_info.new_file = true;
     }
     else
     {
-        std::string temp;
+        std::wstring temp;
         int i = 0;
         while (!std::getline(infile, temp).eof())
         {
@@ -101,19 +101,19 @@ void Editor::load_file()
     }
 }
 
-void Editor::type_char(char c)
+void Editor::type_char(wchar_t c)
 {
     if (!_editor_info.read_only)
     {
         assert(_cursor_info.y >= 0 && _cursor_info.y < _current_buffer->lines.size());
-        std::string &current_line = _current_buffer->lines[_cursor_info.y];
+        std::wstring &current_line = _current_buffer->lines[_cursor_info.y];
         current_line.insert(current_line.begin() + _cursor_info.x, c);
         _cursor_info.x++;
         _editor_info.modified = true;
     }
 }
 
-void Editor::key_input_event(int key)
+void Editor::key_input_event(wint_t key)
 {
     try
     {

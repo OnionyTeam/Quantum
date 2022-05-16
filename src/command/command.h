@@ -63,16 +63,16 @@ struct Command
         if (x == size)  //若光标在行末
         {
             if (e->_current_buffer->lines.size() > e->_cursor_info.y)
-                e->_current_buffer->insert_line("", y + 1);
+                e->_current_buffer->insert_line(L"", y + 1);
             else
-                e->_current_buffer->append_line("");
+                e->_current_buffer->append_line(L"");
         }
         else
         {
             if (e->_current_buffer->lines.size() > e->_cursor_info.y)
-                e->_current_buffer->insert_line("", y + 1);
+                e->_current_buffer->insert_line(L"", y + 1);
             else
-                e->_current_buffer->append_line("");
+                e->_current_buffer->append_line(L"");
 
             y = e->_cursor_info.y;
             e->_current_buffer->lines[y+1].append(e->_current_buffer->lines[y].substr(x));

@@ -21,6 +21,7 @@ struct Buffer
     void append_line(const std::wstring& line);
     void delete_line(config::position_type pos);
     void remove_line(config::position_type pos);
+    int get_real_size(config::position_type y);
 
 
 };

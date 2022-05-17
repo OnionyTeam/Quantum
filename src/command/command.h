@@ -16,7 +16,8 @@ struct Command
         PageUp,
         PageDown,
         Backspace,
-        Enter
+        Enter,
+        Save
     };
     static void move_up(Editor *e) { e->move_up(); }
     static void move_down(Editor *e) { e->move_down(); }
@@ -24,6 +25,7 @@ struct Command
     static void move_right(Editor *e) { e->move_right(); }
     static void page_up(Editor *e) { e->scroll_up(); }
     static void page_down(Editor *e) { e->scroll_down(); }
+    static void save(Editor *e) { e->save_file(); }
     static void backspace(Editor *e)
     {
         if (e->_cursor_info.x == 0 && e->_cursor_info.y == 0) // no charactor could delete
@@ -94,7 +96,8 @@ const static std::map<int, Command::Edit> key_map{
     {KEY_LEFT, Command::Edit::PageDown},
     {KEY_BACKSPACE, Command::Edit::Backspace},
     {10, Command::Edit::Enter},
-    {KEY_ENTER, Command::Edit::Enter}
+    {KEY_ENTER, Command::Edit::Enter},
+    {KEY_F(2), Command::Edit::Save}
 };
 
 const static std::map<Command::Edit, std::function<void(Editor *)>> command_map{
@@ -105,7 +108,8 @@ const static std::map<Command::Edit, std::function<void(Editor *)>> command_map{
     {Command::Edit::PageUp, Command::page_up},
     {Command::Edit::PageDown, Command::page_down},
     {Command::Edit::Backspace, Command::backspace},
-    {Command::Edit::Enter, Command::enter}
+    {Command::Edit::Enter, Command::enter},
+    {Command::Edit::Save, Command::save}
 };
 
 #endif //_QUANTUM_COMMAND_H__

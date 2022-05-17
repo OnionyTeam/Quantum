@@ -1,5 +1,5 @@
 CXX := g++
-CXXFLAGS := -c -Wall -std=c++17 
+CXXFLAGS := -c -Wall -std=c++17
 LD := g++
 LDFLAGS := -lncursesw -I/usr/include/ncursesw
 

@@ -1,11 +1,16 @@
 #include "buffer.h"
-
+#include <ctype.h>
 
 Buffer::Buffer()
     : lines()
 {
 }
 
+
+int Buffer::get_real_size(config::position_type y)
+{
+    return wcswidth(lines[y].c_str(), lines[y].size());
+}
 
 void Buffer::insert_line(const std::wstring& line, config::position_type pos)
 {

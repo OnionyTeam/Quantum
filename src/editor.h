@@ -14,7 +14,7 @@ public:
     Editor(const std::string &filename = "", bool active = false, const WindowInfo &info = {0});
     Editor(const EditorInfo &editor_info, const WindowInfo &window_info = {0});
 
-    void open_file(const std::string &filename);
+    void open_file(const std::wstring &filename);
     void save_file();
 
     void key_input_event(wint_t key) override;

@@ -1,6 +1,7 @@
 #include "editor.h"
 #include "editor_helpers.h"
 #include "command/command.h"
+#include <experimental/filesystem>
 #include <cassert>
 #include <fstream>
 
@@ -31,7 +32,7 @@ void Editor::init()
     wmove(window, _cursor_info.y,
           _cursor_info.x);
 }
-void Editor::open_file(const std::string &filename)
+void Editor::open_file(const std::wstring &filename)
 {
     // TODO
 }
@@ -47,10 +48,10 @@ void Editor::update_buffer()
     {
         // print the buffer
         mvwaddwstr(window, i, 0,
-                    _current_buffer->lines[_scroll_y + i].c_str() + _scroll_x);
+                   _current_buffer->lines[_scroll_y + i].c_str() + _scroll_x);
     }
-    if (_active)    //local pos
-        wmove(window, _cursor_info.y - _scroll_y, _cursor_info.x - _scroll_x);
+    if (_active) // local pos
+        wmove(window, _cursor_info.y - _scroll_y, wcswidth(_current_buffer->lines[_cursor_info.y].c_str(), _cursor_info.x - _scroll_x));
     wrefresh(window);
 }
 
@@ -69,15 +70,16 @@ void Editor::save_file()
         _editor_info.filename = "untitled";
 
     std::wofstream f(_editor_info.filename);
-
-    if(f.is_open()) {
-        for(size_t i=0; i< _current_buffer->lines.size(); i++) {
+    if (f.is_open())
+    {
+        for (size_t i = 0; i < _current_buffer->lines.size(); i++)
+        {
             f << _current_buffer->lines[i] << std::endl;
         }
     }
-    f.close();   
-}
 
+    f.close();
+}
 
 void Editor::load_file()
 {
@@ -105,7 +107,6 @@ void Editor::type_char(wchar_t c)
 {
     if (!_editor_info.read_only)
     {
-        assert(_cursor_info.y >= 0 && _cursor_info.y < _current_buffer->lines.size());
         std::wstring &current_line = _current_buffer->lines[_cursor_info.y];
         current_line.insert(current_line.begin() + _cursor_info.x, c);
         _cursor_info.x++;
@@ -120,9 +121,8 @@ void Editor::key_input_event(wint_t key)
         command_map.at(key_map.at(key))(this);
         _editor_info.modified = true;
     }
-    catch(...)
+    catch (...)
     {
         type_char(key);
     }
-    
 }

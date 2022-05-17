@@ -93,7 +93,7 @@ const static std::map<int, Command::Edit> key_map{
     {KEY_UP, Command::Edit::MoveUp},
     {KEY_DOWN, Command::Edit::MoveDown},
     {KEY_PPAGE, Command::Edit::PageUp},
-    {KEY_LEFT, Command::Edit::PageDown},
+    {KEY_NPAGE, Command::Edit::PageDown},
     {KEY_BACKSPACE, Command::Edit::Backspace},
     {10, Command::Edit::Enter},
     {KEY_ENTER, Command::Edit::Enter},

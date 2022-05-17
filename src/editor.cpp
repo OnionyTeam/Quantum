@@ -72,7 +72,6 @@ void Editor::save_file()
     std::wofstream f(_editor_info.filename);
     if (f.is_open())
     {
-        assert(0);
         for (size_t i = 0; i < _current_buffer->lines.size(); i++)
         {
             f << _current_buffer->lines[i] << std::endl;

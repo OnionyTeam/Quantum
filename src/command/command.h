@@ -83,7 +83,7 @@ struct Command
         e->_cursor_info.y++;
         e->_cursor_info.x = 0;
         e->_editor_info.modified = true;
-        if (e->_cursor_info.y - e->_scroll_y >= static_cast<unsigned int>(config::ncurses_info.lines)) e->scroll_down();
+        if (e->_cursor_info.y - e->_scroll_y >= e->_window_info.lines) e->scroll_down();
     }
 };
 

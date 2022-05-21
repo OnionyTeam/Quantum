@@ -6,8 +6,8 @@ View::View(const WindowInfo &info)
 {
     _buffers.push_back(std::make_shared<Buffer>());
     _current_buffer = _buffers.back();
-    _window = std::shared_ptr<WINDOW>(newwin(_window_info.rows, 
-    _window_info.cols, _window_info.x, _window_info.y),
+    _window = std::shared_ptr<WINDOW>(newwin(_window_info.lines, 
+    _window_info.cols, _window_info.y, _window_info.x),
     [](WINDOW* w){
         delwin(w);
     });
@@ -18,7 +18,7 @@ void View::move_down()
 {
     if (_current_buffer->lines.size() > _cursor_info.y + 1)
     {
-        if (_cursor_info.y >= config::ncurses_info.lines)
+        if (_cursor_info.y >= _window_info.lines)   //out of showing range
         {
             scroll_down();
         }

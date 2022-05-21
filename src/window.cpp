@@ -46,7 +46,7 @@ void Window::update_all()
 void Window::update()
 {
     //just update current view
-    _current_view->update();
+    update_all();
 }
 
 Window::~Window()

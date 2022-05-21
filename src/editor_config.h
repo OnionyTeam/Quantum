@@ -21,10 +21,10 @@ struct EditorInfo
 
 struct WindowInfo 
 {
-    int cols;
-    int rows;
-    int x;
-    int y;
+    unsigned int cols;
+    unsigned int lines;
+    unsigned int x;
+    unsigned int y;
 };
 
 #endif //_QUANTUM_EDITOR_CONFIG_H__

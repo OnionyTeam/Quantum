@@ -5,7 +5,7 @@
 #include <cassert>
 #include <fstream>
 
-Editor::Editor(const std::string &filename, bool active, const WindowInfo &info)
+Editor::Editor(const std::string &filename, const WindowInfo &info, bool active)
     : View(info)
 {
     _active = active;
@@ -27,10 +27,8 @@ Editor::Editor(const EditorInfo &editor_info, const WindowInfo &window_info)
 
 void Editor::init()
 {
-    WINDOW *window = _window.get();
     _last_cursor_x = _cursor_info.x;
-    wmove(window, _cursor_info.y,
-          _cursor_info.x);
+    update_cursor();
 }
 void Editor::open_file(const std::wstring &filename)
 {
@@ -42,19 +40,24 @@ void Editor::update_buffer()
     WINDOW *window = _window.get();
     // first, clear the window
     werase(window);
-    auto line_num = static_cast<int>(_current_buffer->lines.size());
-    auto lines = std::min(config::ncurses_info.lines, line_num);
-    for (int i = 0; i < lines; ++i)
+    auto line_num = static_cast<unsigned int>(_current_buffer->lines.size());
+    auto lines = std::min(_window_info.lines, line_num);
+    for (unsigned int i = 0; i < lines; ++i)
     {
         // print the buffer
-        mvwaddwstr(window, i, 0,
+        mvwaddwstr(window, i, _window_info.x,
                    _current_buffer->lines[_scroll_y + i].c_str() + _scroll_x);
     }
     if (_active) // local pos
-        wmove(window, _cursor_info.y - _scroll_y, wcswidth(_current_buffer->lines[_cursor_info.y].c_str(), _cursor_info.x - _scroll_x));
+        update_cursor();
     wrefresh(window);
 }
 
+void Editor::update_cursor()
+{
+    move(_cursor_info.y - _scroll_y + _window_info.y, 
+        wcswidth(_current_buffer->lines[_cursor_info.y].c_str(), _cursor_info.x - _scroll_x) + _window_info.x);
+}
 void Editor::update()
 {
     if (_editor_info.refresh_all || _editor_info.modified)
@@ -97,6 +100,7 @@ void Editor::load_file()
         {
             _current_buffer->append_line(temp);
         }
+        _current_buffer->append_line(L"");
         _editor_info.new_file = false;
     }
 }
@@ -114,12 +118,17 @@ void Editor::type_char(wchar_t c)
 
 void Editor::key_input_event(wint_t key)
 {
-    try
+    if (key_map.contains(key))
     {
-        command_map.at(key_map.at(key))(this);
-        _editor_info.modified = true;
+        try
+        {
+            command_map.at(key_map.at(key))(this);
+        }
+        catch (...)
+        {
+        }
     }
-    catch (...)
+    else
     {
         type_char(key);
     }

@@ -13,8 +13,11 @@ enum class ViewStatus
     EXIT
 };
 
-class View 
+class StatusLine;
+
+class View
 {
+    friend StatusLine;
 protected:
     std::vector<std::shared_ptr<Buffer>> _buffers;
     std::shared_ptr<Buffer> _current_buffer;

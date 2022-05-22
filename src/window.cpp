@@ -27,6 +27,7 @@ void Window::handle(wint_t key)
     default:
         _current_view->key_input_event(key);
     }
+
     if (_current_view->status() == ViewStatus::EXIT)
     {
         if (_views.size() == 1)
@@ -45,8 +46,8 @@ void Window::update_all()
 
 void Window::update()
 {
-    //just update current view
     update_all();
+    doupdate();
 }
 
 Window::~Window()

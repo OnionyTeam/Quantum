@@ -50,7 +50,7 @@ void Editor::update_buffer()
     }
     if (_active) // local pos
         update_cursor();
-    wrefresh(window);
+    wnoutrefresh(window);
 }
 
 void Editor::update_cursor()

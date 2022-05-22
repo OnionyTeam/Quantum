@@ -9,6 +9,13 @@ struct CursorInfo
     unsigned int y;
 };
 
+struct Color
+{
+    short foreground;
+    short background;
+};
+
+
 // this struct saved editor's config
 struct EditorInfo
 {

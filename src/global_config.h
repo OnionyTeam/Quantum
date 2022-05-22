@@ -15,11 +15,11 @@
 // program description
 namespace config
 {
-    const static char endl = '\n';
     using position_type = size_t;
-
+    const static char endl = '\n';
     const static std::string program_description = "Quantum is a console-run editor and it has special shortcuts to help "
                                                    "people code quickly. But it's still in the preparatory stage";
+
 
     struct NcursesInfo
     {

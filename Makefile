@@ -1,12 +1,12 @@
 CXX := g++
-CXXFLAGS := -c -Wall -std=c++20
+CXXFLAGS := -c -Wall -std=c++20 -I./src/libs/
 LD := g++
-LDFLAGS := -lncursesw -I/usr/include/ncursesw
+LDFLAGS := -lncursesw -I/usr/include/ncursesw ./src/libs/fmt/libfmt.a
 
 SRCDIR := src
 OBJDIR := obj
 
-SRC := $(wildcard $(SRCDIR)/*.cpp $(SRCDIR)/components/*.cpp)
+SRC := $(wildcard $(SRCDIR)/*.cpp $(SRCDIR)/components/*.cpp $(SRCDIR)/command/*.cpp $(SRCDIR)/draw/*.cpp)
 OBJ := $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRC))
 EXE := quantum.out
 

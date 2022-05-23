@@ -32,6 +32,50 @@
         "type_traits": "cpp",
         "tuple": "cpp",
         "typeinfo": "cpp",
-        "utility": "cpp"
-    }
+        "utility": "cpp",
+        "atomic": "cpp",
+        "bit": "cpp",
+        "chrono": "cpp",
+        "codecvt": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "ctime": "cpp",
+        "deque": "cpp",
+        "map": "cpp",
+        "string": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "ratio": "cpp",
+        "iostream": "cpp",
+        "numbers": "cpp",
+        "cassert": "cpp",
+        "cerrno": "cpp",
+        "climits": "cpp",
+        "condition_variable": "cpp",
+        "cstring": "cpp",
+        "filesystem": "cpp",
+        "future": "cpp",
+        "iomanip": "cpp",
+        "ios": "cpp",
+        "locale": "cpp",
+        "mutex": "cpp",
+        "queue": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "cstdbool": "cpp",
+        "version": "cpp"
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/momo/workspace/Quantum",
+            "binaryPath": "/home/momo/workspace/Quantum/quantum.out",
+            "binaryArgs": []
+        }
+    ]
 }

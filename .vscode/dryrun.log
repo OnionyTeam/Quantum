@@ -1,12 +1,16 @@
 make all --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/momo/workspace/Quantum'
 mkdir obj
-g++ -c -Wall -std=c++17  src/view.cpp -o obj/view.o
-g++ -c -Wall -std=c++17  src/editor.cpp -o obj/editor.o
-g++ -c -Wall -std=c++17  src/quantum.cpp -o obj/quantum.o
-g++ -c -Wall -std=c++17  src/window.cpp -o obj/window.o
-g++ -c -Wall -std=c++17  src/main.cpp -o obj/main.o
-g++ -c -Wall -std=c++17  src/buffer.cpp -o obj/buffer.o
-g++  obj/view.o  obj/editor.o  obj/quantum.o  obj/window.o  obj/main.o  obj/buffer.o -lncursesw -I/usr/include/ncursesw -o quantum.out
+g++ -c -Wall -std=c++20 -I./src/libs/ src/buffer.cpp -o obj/buffer.o
+g++ -c -Wall -std=c++20 -I./src/libs/ src/editor.cpp -o obj/editor.o
+g++ -c -Wall -std=c++20 -I./src/libs/ src/main.cpp -o obj/main.o
+g++ -c -Wall -std=c++20 -I./src/libs/ src/quantum.cpp -o obj/quantum.o
+ 
+g++ -c -Wall -std=c++20 -I./src/libs/ src/view.cpp -o obj/view.o
+g++ -c -Wall -std=c++20 -I./src/libs/ src/window.cpp -o obj/window.o
+g++ -c -Wall -std=c++20 -I./src/libs/ src/components/status_line.cpp -o obj/components/status_line.o
+g++ -c -Wall -std=c++20 -I./src/libs/ src/command/command.cpp -o obj/command/command.o
+g++ -c -Wall -std=c++20 -I./src/libs/ src/draw/draw_helper.cpp -o obj/draw/draw_helper.o
+g++  obj/buffer.o  obj/editor.o  obj/main.o  obj/quantum.o  obj/view.o  obj/window.o  obj/components/status_line.o  obj/command/command.o  obj/draw/draw_helper.o -lncursesw -I/usr/include/ncursesw ./src/libs/fmt/libfmt.a -o quantum.out
 make: Leaving directory '/home/momo/workspace/Quantum'
  

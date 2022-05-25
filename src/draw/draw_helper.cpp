@@ -3,7 +3,7 @@
 
 namespace draw
 {
-    void draw_text_with_align(WINDOW* w, const char_type* c, unsigned int y, Align align)
+    void draw_text_with_align(WINDOW* w, const config::char_type* c, unsigned int y, Align align)
     {
         unsigned int pos = 0, row, col;
         size_t len = wcslen(c);

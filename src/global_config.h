@@ -8,6 +8,7 @@
 
 #include <fstream>
 #include <string>
+#include <fmt/os.h>
 #include <assert.h>
 #include <ncursesw/ncurses.h>
 #include "utils.h"
@@ -16,6 +17,7 @@
 namespace config
 {
     using position_type = size_t;
+    typedef wchar_t char_type;
     const static char endl = '\n';
     const static std::string program_description = "Quantum is a console-run editor and it has special shortcuts to help "
                                                    "people code quickly. But it's still in the preparatory stage";
@@ -47,25 +49,7 @@ namespace config
     };
     static NcursesInfo ncurses_info;
 
-    class Logger
-    {
-    private:
-        ::std::wfstream stream;
-
-    public:
-        Logger() : stream("out.txt", std::ios_base::out){};
-
-
-        template <typename T>
-        Logger& operator<<(T element) 
-        {
-            stream << element << std::flush;
-            return *this;
-        }
-
-        ~Logger() { stream << std::flush; stream.close(); }
-    };
-    static Logger logger;
+    static fmt::v8::ostream logger = fmt::output_file("out.txt");
 } // namespace config
 
 #endif //_QUANTUM_GLOBAL_CONFIG_H__

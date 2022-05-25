@@ -4,6 +4,7 @@
 #include "../editor.h"
 #include <functional>
 #include <map>
+#include <unordered_map>
 
 struct Command
 {
@@ -30,7 +31,7 @@ struct Command
     static void enter(Editor *e);
 };
 
-const static std::map<int, Command::Edit> key_map{
+const static std::unordered_map<int, Command::Edit> key_map{
     {KEY_LEFT, Command::Edit::MoveLeft},
     {KEY_RIGHT, Command::Edit::MoveRight},
     {KEY_UP, Command::Edit::MoveUp},

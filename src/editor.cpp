@@ -10,7 +10,6 @@ Editor::Editor(const std::string &filename, const WindowInfo &info, bool active)
 {
     _active = active;
     _editor_info.filename = filename;
-    _cursor_info = {0};
     _editor_info.refresh_all = true;
     _editor_info.modified = false;
 
@@ -50,12 +49,11 @@ void Editor::update_buffer()
     }
     if (_active) // local pos
         update_cursor();
-    wnoutrefresh(window);
 }
 
 void Editor::update_cursor()
 {
-    move(_cursor_info.y - _scroll_y + _window_info.y, 
+    wmove(_window.get(), _cursor_info.y - _scroll_y + _window_info.y, 
         wcswidth(_current_buffer->lines[_cursor_info.y].c_str(), _cursor_info.x - _scroll_x) + _window_info.x);
 }
 void Editor::update()
@@ -63,8 +61,12 @@ void Editor::update()
     if (_editor_info.refresh_all || _editor_info.modified)
     {
         update_buffer();
+        if (_active) wrefresh(_window.get());
+        else
+            wnoutrefresh(_window.get());
         _editor_info.refresh_all = false;
     }
+    // wrefresh(_window.get());
 }
 
 void Editor::save_file()

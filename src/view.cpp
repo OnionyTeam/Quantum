@@ -1,16 +1,20 @@
 #include "view.h"
 
-View::View(const WindowInfo &info) 
-    : _buffers(), _window_info(info), _read_only(false),
-    _scroll_x(0), _scroll_y(0), _last_cursor_x(0), _status(ViewStatus::NORMAL)
+View::View(const WindowInfo &info)
+    : _buffers(), _window_info(info),
+      _cursor_info{0},
+      _read_only(false),
+      _scroll_x(0), _scroll_y(0), _last_cursor_x(0), _status(ViewStatus::NORMAL)
 {
     _buffers.push_back(std::make_shared<Buffer>());
     _current_buffer = _buffers.back();
-    _window = std::shared_ptr<WINDOW>(newwin(_window_info.lines, 
-    _window_info.cols, _window_info.y, _window_info.x),
-    [](WINDOW* w){
-        delwin(w);
-    });
+    _window = std::shared_ptr<WINDOW>(newwin(_window_info.lines,
+                                             _window_info.cols, _window_info.y, _window_info.x),
+                                      [](WINDOW *w)
+                                      {
+                                          delwin(w);
+                                      });
+    // leaveok(_window.get(), true);
     // redrawwin(_window.get());
 }
 
@@ -18,7 +22,7 @@ void View::move_down()
 {
     if (_current_buffer->lines.size() > _cursor_info.y + 1)
     {
-        if (_cursor_info.y >= _window_info.lines)   //out of showing range
+        if (_cursor_info.y >= _window_info.lines) // out of showing range
         {
             scroll_down();
         }
@@ -87,7 +91,6 @@ void View::scroll_up()
         _scroll_y--;
     }
 }
-
 
 View::~View()
 {

@@ -1,6 +1,7 @@
 #include "status_line.h"
 #include <fmt/format.h>
 #include <fmt/xchar.h>
+#include <timer/timer.h>
 
 StatusLine::StatusLine(const std::shared_ptr<View> &view, const WindowInfo &info)
     : View(info), _target(view), _info_part(L"", Align::RightAligh), _message_part(L"", Align::LeftAlign)
@@ -11,11 +12,9 @@ StatusLine::StatusLine(const std::shared_ptr<View> &view, const WindowInfo &info
     leaveok(_window.get(), true);
 }
 
-void StatusLine::show_message(const std::wstring_view str)
+void StatusLine::show_message(const std::wstring &str, size_t timeout)
 {
     _message_part.first = std::wstring(L"Message: ") + std::wstring(str);
-    _timer = std::make_unique<Timer>(2000, true, [&](std::wstring &s){ s = L""; update(); refresh();}, 
-        std::ref(_message_part.first));
 }
 
 

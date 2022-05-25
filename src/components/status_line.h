@@ -4,7 +4,6 @@
 #include "../view.h"
 #include "../editor.h"
 #include "../draw/draw_helper.h"
-#include <timer/timer.h>
 #include <array>
 
 
@@ -14,11 +13,10 @@ private:
     std::shared_ptr<View> _target; // look for
     std::pair<std::wstring, Align> _info_part;
     std::pair<std::wstring, Align> _message_part;
-    std::unique_ptr<Timer> _timer;
 
 public:
     StatusLine(const std::shared_ptr<View> &view, const WindowInfo &info = {0});
-    void show_message(const std::wstring_view str);
+    void show_message(const std::wstring &str, size_t timeout = 2000);
     void update() override;
 };
 

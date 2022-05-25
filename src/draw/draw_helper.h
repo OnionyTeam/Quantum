@@ -2,7 +2,7 @@
 #define _QUANTUM_DRAW_HELPER_H__
 
 #include <ncursesw/ncurses.h>
-
+#include "../global_config.h"
 enum class Align
 {
     LeftAlign,
@@ -12,8 +12,7 @@ enum class Align
 
 namespace draw
 {
-    typedef wchar_t char_type;
-    void draw_text_with_align(WINDOW* w, const char_type* c, unsigned int y, Align align);
+    void draw_text_with_align(WINDOW* w, const config::char_type* c, unsigned int y, Align align);
 } // namespace draw
 
 

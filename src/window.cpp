@@ -2,8 +2,8 @@
 #include "editor.h"
 #include <cassert>
 
-Window::Window() 
-    : _views()
+Window::Window()
+    : _views(), _changed(true)
 {
 }
 
@@ -26,6 +26,7 @@ void Window::handle(wint_t key)
         break;
     default:
         _current_view->key_input_event(key);
+        _changed = true;
     }
 
     if (_current_view->status() == ViewStatus::EXIT)
@@ -37,17 +38,21 @@ void Window::handle(wint_t key)
 
 void Window::update_all()
 {
-    //update all
-    for (auto &e : _views) {
+    // update all
+    for (auto &e : _views)
+    {
         e->update();
     }
-
 }
 
 void Window::update()
 {
-    update_all();
-    doupdate();
+    if (_changed)
+    {
+        update_all();
+        // doupdate();
+        _changed = false;
+    }
 }
 
 Window::~Window()

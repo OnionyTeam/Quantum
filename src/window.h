@@ -15,6 +15,7 @@ private:
     std::vector<std::shared_ptr<View>> _views;
     std::shared_ptr<View> _current_view;
     WindowStatus _status;
+    bool _changed;
 public:
     Window();
     void add_view(std::shared_ptr<View> view, bool active = false);
@@ -22,6 +23,7 @@ public:
     const std::shared_ptr<View> get_current_view() const { return _current_view; };
     std::shared_ptr<View> get_current_view() { return _current_view; };
     const WindowStatus status() const { return _status; };
+    void refrush() { _changed = true; }
     void handle(wint_t key);
     void update();
     void update_all();

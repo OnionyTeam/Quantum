@@ -5,6 +5,10 @@ src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.o: src/quantum/buffer.cpp
 src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.o: src/quantum/buffer.h
 src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.o: src/quantum/global_config.h
 src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.o: src/quantum/utils.h
+src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.o: src/quantum/../../third-party/fmt/include/fmt/core.h
+src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format-inl.h
+src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format.h
+src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.o: src/quantum/../../third-party/fmt/include/fmt/os.h
 
 src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o: src/quantum/buffer.h
 src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o: src/quantum/command/command.cpp
@@ -14,6 +18,10 @@ src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o: src/quantum/editor_con
 src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o: src/quantum/global_config.h
 src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o: src/quantum/utils.h
 src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o: src/quantum/view.h
+src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o: src/quantum/../../third-party/fmt/include/fmt/core.h
+src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format-inl.h
+src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format.h
+src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o: src/quantum/../../third-party/fmt/include/fmt/os.h
 
 src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/buffer.h
 src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/components/status_line.cpp
@@ -24,11 +32,20 @@ src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/edi
 src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/global_config.h
 src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/utils.h
 src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/view.h
+src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/../../third-party/fmt/include/fmt/core.h
+src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format-inl.h
+src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format.h
+src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/../../third-party/fmt/include/fmt/os.h
+src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o: src/quantum/../../third-party/fmt/include/fmt/xchar.h
 
 src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.o: src/quantum/draw/draw_helper.cpp
 src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.o: src/quantum/draw/draw_helper.h
 src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.o: src/quantum/global_config.h
 src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.o: src/quantum/utils.h
+src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.o: src/quantum/../../third-party/fmt/include/fmt/core.h
+src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format-inl.h
+src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format.h
+src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.o: src/quantum/../../third-party/fmt/include/fmt/os.h
 
 src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o: src/quantum/buffer.h
 src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o: src/quantum/command/command.h
@@ -39,9 +56,14 @@ src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o: src/quantum/editor_helpers.h
 src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o: src/quantum/global_config.h
 src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o: src/quantum/utils.h
 src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o: src/quantum/view.h
+src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o: src/quantum/../../third-party/fmt/include/fmt/core.h
+src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format-inl.h
+src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format.h
+src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o: src/quantum/../../third-party/fmt/include/fmt/os.h
 
 src/quantum/CMakeFiles/Quantum.dir/main.cpp.o: src/quantum/main.cpp
 src/quantum/CMakeFiles/Quantum.dir/main.cpp.o: src/quantum/quantum.h
+src/quantum/CMakeFiles/Quantum.dir/main.cpp.o: src/quantum/../libs/cmd_parser/cmdparser.h
 
 src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/buffer.h
 src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/components/status_line.h
@@ -54,6 +76,11 @@ src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/quantum.h
 src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/utils.h
 src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/view.h
 src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/window.h
+src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/../../third-party/fmt/include/fmt/core.h
+src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format-inl.h
+src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format.h
+src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/../../third-party/fmt/include/fmt/os.h
+src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o: src/quantum/../libs/cmd_parser/cmdparser.h
 
 src/quantum/CMakeFiles/Quantum.dir/view.cpp.o: src/quantum/buffer.h
 src/quantum/CMakeFiles/Quantum.dir/view.cpp.o: src/quantum/editor_config.h
@@ -61,6 +88,10 @@ src/quantum/CMakeFiles/Quantum.dir/view.cpp.o: src/quantum/global_config.h
 src/quantum/CMakeFiles/Quantum.dir/view.cpp.o: src/quantum/utils.h
 src/quantum/CMakeFiles/Quantum.dir/view.cpp.o: src/quantum/view.cpp
 src/quantum/CMakeFiles/Quantum.dir/view.cpp.o: src/quantum/view.h
+src/quantum/CMakeFiles/Quantum.dir/view.cpp.o: src/quantum/../../third-party/fmt/include/fmt/core.h
+src/quantum/CMakeFiles/Quantum.dir/view.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format-inl.h
+src/quantum/CMakeFiles/Quantum.dir/view.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format.h
+src/quantum/CMakeFiles/Quantum.dir/view.cpp.o: src/quantum/../../third-party/fmt/include/fmt/os.h
 
 src/quantum/CMakeFiles/Quantum.dir/window.cpp.o: src/quantum/buffer.h
 src/quantum/CMakeFiles/Quantum.dir/window.cpp.o: src/quantum/editor.h
@@ -70,4 +101,8 @@ src/quantum/CMakeFiles/Quantum.dir/window.cpp.o: src/quantum/utils.h
 src/quantum/CMakeFiles/Quantum.dir/window.cpp.o: src/quantum/view.h
 src/quantum/CMakeFiles/Quantum.dir/window.cpp.o: src/quantum/window.cpp
 src/quantum/CMakeFiles/Quantum.dir/window.cpp.o: src/quantum/window.h
+src/quantum/CMakeFiles/Quantum.dir/window.cpp.o: src/quantum/../../third-party/fmt/include/fmt/core.h
+src/quantum/CMakeFiles/Quantum.dir/window.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format-inl.h
+src/quantum/CMakeFiles/Quantum.dir/window.cpp.o: src/quantum/../../third-party/fmt/include/fmt/format.h
+src/quantum/CMakeFiles/Quantum.dir/window.cpp.o: src/quantum/../../third-party/fmt/include/fmt/os.h
 

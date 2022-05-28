@@ -1,57 +1,57 @@
 [
 {
   "directory": "/home/momo/workspace/Quantum/build/third-party/fmt",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt -I/home/momo/workspace/Quantum/third-party/fmt/include  -g   -std=gnu++1z -o CMakeFiles/fmt.dir/src/format.cc.o -c /home/momo/workspace/Quantum/third-party/fmt/src/format.cc",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include  -g   -std=gnu++1z -o CMakeFiles/fmt.dir/src/format.cc.o -c /home/momo/workspace/Quantum/third-party/fmt/src/format.cc",
   "file": "/home/momo/workspace/Quantum/third-party/fmt/src/format.cc"
 },
 {
   "directory": "/home/momo/workspace/Quantum/build/third-party/fmt",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt -I/home/momo/workspace/Quantum/third-party/fmt/include  -g   -std=gnu++1z -o CMakeFiles/fmt.dir/src/os.cc.o -c /home/momo/workspace/Quantum/third-party/fmt/src/os.cc",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include  -g   -std=gnu++1z -o CMakeFiles/fmt.dir/src/os.cc.o -c /home/momo/workspace/Quantum/third-party/fmt/src/os.cc",
   "file": "/home/momo/workspace/Quantum/third-party/fmt/src/os.cc"
 },
 {
   "directory": "/home/momo/workspace/Quantum/build/src/quantum",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt  -g   -std=gnu++1z -o CMakeFiles/Quantum.dir/buffer.cpp.o -c /home/momo/workspace/Quantum/src/quantum/buffer.cpp",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -g   -std=gnu++1z -o CMakeFiles/quantum.dir/buffer.cpp.o -c /home/momo/workspace/Quantum/src/quantum/buffer.cpp",
   "file": "/home/momo/workspace/Quantum/src/quantum/buffer.cpp"
 },
 {
   "directory": "/home/momo/workspace/Quantum/build/src/quantum",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt  -g   -std=gnu++1z -o CMakeFiles/Quantum.dir/command/command.cpp.o -c /home/momo/workspace/Quantum/src/quantum/command/command.cpp",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -g   -std=gnu++1z -o CMakeFiles/quantum.dir/command/command.cpp.o -c /home/momo/workspace/Quantum/src/quantum/command/command.cpp",
   "file": "/home/momo/workspace/Quantum/src/quantum/command/command.cpp"
 },
 {
   "directory": "/home/momo/workspace/Quantum/build/src/quantum",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt  -g   -std=gnu++1z -o CMakeFiles/Quantum.dir/components/status_line.cpp.o -c /home/momo/workspace/Quantum/src/quantum/components/status_line.cpp",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -g   -std=gnu++1z -o CMakeFiles/quantum.dir/components/status_line.cpp.o -c /home/momo/workspace/Quantum/src/quantum/components/status_line.cpp",
   "file": "/home/momo/workspace/Quantum/src/quantum/components/status_line.cpp"
 },
 {
   "directory": "/home/momo/workspace/Quantum/build/src/quantum",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt  -g   -std=gnu++1z -o CMakeFiles/Quantum.dir/draw/draw_helper.cpp.o -c /home/momo/workspace/Quantum/src/quantum/draw/draw_helper.cpp",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -g   -std=gnu++1z -o CMakeFiles/quantum.dir/draw/draw_helper.cpp.o -c /home/momo/workspace/Quantum/src/quantum/draw/draw_helper.cpp",
   "file": "/home/momo/workspace/Quantum/src/quantum/draw/draw_helper.cpp"
 },
 {
   "directory": "/home/momo/workspace/Quantum/build/src/quantum",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt  -g   -std=gnu++1z -o CMakeFiles/Quantum.dir/editor.cpp.o -c /home/momo/workspace/Quantum/src/quantum/editor.cpp",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -g   -std=gnu++1z -o CMakeFiles/quantum.dir/editor.cpp.o -c /home/momo/workspace/Quantum/src/quantum/editor.cpp",
   "file": "/home/momo/workspace/Quantum/src/quantum/editor.cpp"
 },
 {
   "directory": "/home/momo/workspace/Quantum/build/src/quantum",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt  -g   -std=gnu++1z -o CMakeFiles/Quantum.dir/main.cpp.o -c /home/momo/workspace/Quantum/src/quantum/main.cpp",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -g   -std=gnu++1z -o CMakeFiles/quantum.dir/main.cpp.o -c /home/momo/workspace/Quantum/src/quantum/main.cpp",
   "file": "/home/momo/workspace/Quantum/src/quantum/main.cpp"
 },
 {
   "directory": "/home/momo/workspace/Quantum/build/src/quantum",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt  -g   -std=gnu++1z -o CMakeFiles/Quantum.dir/quantum.cpp.o -c /home/momo/workspace/Quantum/src/quantum/quantum.cpp",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -g   -std=gnu++1z -o CMakeFiles/quantum.dir/quantum.cpp.o -c /home/momo/workspace/Quantum/src/quantum/quantum.cpp",
   "file": "/home/momo/workspace/Quantum/src/quantum/quantum.cpp"
 },
 {
   "directory": "/home/momo/workspace/Quantum/build/src/quantum",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt  -g   -std=gnu++1z -o CMakeFiles/Quantum.dir/view.cpp.o -c /home/momo/workspace/Quantum/src/quantum/view.cpp",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -g   -std=gnu++1z -o CMakeFiles/quantum.dir/view.cpp.o -c /home/momo/workspace/Quantum/src/quantum/view.cpp",
   "file": "/home/momo/workspace/Quantum/src/quantum/view.cpp"
 },
 {
   "directory": "/home/momo/workspace/Quantum/build/src/quantum",
-  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt  -g   -std=gnu++1z -o CMakeFiles/Quantum.dir/window.cpp.o -c /home/momo/workspace/Quantum/src/quantum/window.cpp",
+  "command": "/usr/bin/g++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -g   -std=gnu++1z -o CMakeFiles/quantum.dir/window.cpp.o -c /home/momo/workspace/Quantum/src/quantum/window.cpp",
   "file": "/home/momo/workspace/Quantum/src/quantum/window.cpp"
 }
 ]

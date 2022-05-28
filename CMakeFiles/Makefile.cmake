@@ -22,14 +22,19 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.10/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeParseArguments.cmake"
+  "/usr/share/cmake-3.10/Modules/CMakePushCheckState.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake-3.10/Modules/CheckCXXCompilerFlag.cmake"
   "/usr/share/cmake-3.10/Modules/CheckCXXSourceCompiles.cmake"
+  "/usr/share/cmake-3.10/Modules/CheckLibraryExists.cmake"
   "/usr/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/usr/share/cmake-3.10/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.10/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.10/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.10/Modules/FindCurses.cmake"
+  "/usr/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake"
+  "/usr/share/cmake-3.10/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-3.10/Modules/GNUInstallDirs.cmake"
   "/usr/share/cmake-3.10/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.10/Modules/Platform/Linux-GNU-CXX.cmake"
@@ -54,5 +59,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "third-party/fmt/CMakeFiles/fmt.dir/DependInfo.cmake"
-  "src/quantum/CMakeFiles/Quantum.dir/DependInfo.cmake"
+  "src/quantum/CMakeFiles/quantum.dir/DependInfo.cmake"
   )

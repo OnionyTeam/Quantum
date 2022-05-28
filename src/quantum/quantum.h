@@ -2,7 +2,7 @@
 #define _QUANTUM_QUANTUM_H__
 
 #include <string>
-#include "libs/cmd_parser/cmdparser.h"
+#include "cmd_parser/cmdparser.h"
 
 class Quantum
 {

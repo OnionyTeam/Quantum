@@ -111,19 +111,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/quantum/CMakeFiles/Quantum.dir/rule:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f CMakeFiles/Makefile2 src/quantum/CMakeFiles/Quantum.dir/rule
-.PHONY : src/quantum/CMakeFiles/Quantum.dir/rule
+src/quantum/CMakeFiles/quantum.dir/rule:
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f CMakeFiles/Makefile2 src/quantum/CMakeFiles/quantum.dir/rule
+.PHONY : src/quantum/CMakeFiles/quantum.dir/rule
 
 # Convenience name for target.
-Quantum: src/quantum/CMakeFiles/Quantum.dir/rule
+quantum: src/quantum/CMakeFiles/quantum.dir/rule
 
-.PHONY : Quantum
+.PHONY : quantum
 
 # fast build rule for target.
-Quantum/fast:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/build
-.PHONY : Quantum/fast
+quantum/fast:
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/build
+.PHONY : quantum/fast
 
 buffer.o: buffer.cpp.o
 
@@ -131,7 +131,7 @@ buffer.o: buffer.cpp.o
 
 # target to build an object file
 buffer.cpp.o:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.o
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/buffer.cpp.o
 .PHONY : buffer.cpp.o
 
 buffer.i: buffer.cpp.i
@@ -140,7 +140,7 @@ buffer.i: buffer.cpp.i
 
 # target to preprocess a source file
 buffer.cpp.i:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.i
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/buffer.cpp.i
 .PHONY : buffer.cpp.i
 
 buffer.s: buffer.cpp.s
@@ -149,7 +149,7 @@ buffer.s: buffer.cpp.s
 
 # target to generate assembly for a file
 buffer.cpp.s:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/buffer.cpp.s
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/buffer.cpp.s
 .PHONY : buffer.cpp.s
 
 command/command.o: command/command.cpp.o
@@ -158,7 +158,7 @@ command/command.o: command/command.cpp.o
 
 # target to build an object file
 command/command.cpp.o:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.o
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/command/command.cpp.o
 .PHONY : command/command.cpp.o
 
 command/command.i: command/command.cpp.i
@@ -167,7 +167,7 @@ command/command.i: command/command.cpp.i
 
 # target to preprocess a source file
 command/command.cpp.i:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.i
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/command/command.cpp.i
 .PHONY : command/command.cpp.i
 
 command/command.s: command/command.cpp.s
@@ -176,7 +176,7 @@ command/command.s: command/command.cpp.s
 
 # target to generate assembly for a file
 command/command.cpp.s:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/command/command.cpp.s
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/command/command.cpp.s
 .PHONY : command/command.cpp.s
 
 components/status_line.o: components/status_line.cpp.o
@@ -185,7 +185,7 @@ components/status_line.o: components/status_line.cpp.o
 
 # target to build an object file
 components/status_line.cpp.o:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.o
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/components/status_line.cpp.o
 .PHONY : components/status_line.cpp.o
 
 components/status_line.i: components/status_line.cpp.i
@@ -194,7 +194,7 @@ components/status_line.i: components/status_line.cpp.i
 
 # target to preprocess a source file
 components/status_line.cpp.i:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.i
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/components/status_line.cpp.i
 .PHONY : components/status_line.cpp.i
 
 components/status_line.s: components/status_line.cpp.s
@@ -203,7 +203,7 @@ components/status_line.s: components/status_line.cpp.s
 
 # target to generate assembly for a file
 components/status_line.cpp.s:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/components/status_line.cpp.s
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/components/status_line.cpp.s
 .PHONY : components/status_line.cpp.s
 
 draw/draw_helper.o: draw/draw_helper.cpp.o
@@ -212,7 +212,7 @@ draw/draw_helper.o: draw/draw_helper.cpp.o
 
 # target to build an object file
 draw/draw_helper.cpp.o:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.o
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/draw/draw_helper.cpp.o
 .PHONY : draw/draw_helper.cpp.o
 
 draw/draw_helper.i: draw/draw_helper.cpp.i
@@ -221,7 +221,7 @@ draw/draw_helper.i: draw/draw_helper.cpp.i
 
 # target to preprocess a source file
 draw/draw_helper.cpp.i:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.i
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/draw/draw_helper.cpp.i
 .PHONY : draw/draw_helper.cpp.i
 
 draw/draw_helper.s: draw/draw_helper.cpp.s
@@ -230,7 +230,7 @@ draw/draw_helper.s: draw/draw_helper.cpp.s
 
 # target to generate assembly for a file
 draw/draw_helper.cpp.s:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/draw/draw_helper.cpp.s
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/draw/draw_helper.cpp.s
 .PHONY : draw/draw_helper.cpp.s
 
 editor.o: editor.cpp.o
@@ -239,7 +239,7 @@ editor.o: editor.cpp.o
 
 # target to build an object file
 editor.cpp.o:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/editor.cpp.o
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/editor.cpp.o
 .PHONY : editor.cpp.o
 
 editor.i: editor.cpp.i
@@ -248,7 +248,7 @@ editor.i: editor.cpp.i
 
 # target to preprocess a source file
 editor.cpp.i:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/editor.cpp.i
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/editor.cpp.i
 .PHONY : editor.cpp.i
 
 editor.s: editor.cpp.s
@@ -257,7 +257,7 @@ editor.s: editor.cpp.s
 
 # target to generate assembly for a file
 editor.cpp.s:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/editor.cpp.s
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/editor.cpp.s
 .PHONY : editor.cpp.s
 
 main.o: main.cpp.o
@@ -266,7 +266,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/main.cpp.o
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -275,7 +275,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/main.cpp.i
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -284,7 +284,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/main.cpp.s
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 quantum.o: quantum.cpp.o
@@ -293,7 +293,7 @@ quantum.o: quantum.cpp.o
 
 # target to build an object file
 quantum.cpp.o:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.o
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/quantum.cpp.o
 .PHONY : quantum.cpp.o
 
 quantum.i: quantum.cpp.i
@@ -302,7 +302,7 @@ quantum.i: quantum.cpp.i
 
 # target to preprocess a source file
 quantum.cpp.i:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.i
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/quantum.cpp.i
 .PHONY : quantum.cpp.i
 
 quantum.s: quantum.cpp.s
@@ -311,7 +311,7 @@ quantum.s: quantum.cpp.s
 
 # target to generate assembly for a file
 quantum.cpp.s:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/quantum.cpp.s
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/quantum.cpp.s
 .PHONY : quantum.cpp.s
 
 view.o: view.cpp.o
@@ -320,7 +320,7 @@ view.o: view.cpp.o
 
 # target to build an object file
 view.cpp.o:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/view.cpp.o
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/view.cpp.o
 .PHONY : view.cpp.o
 
 view.i: view.cpp.i
@@ -329,7 +329,7 @@ view.i: view.cpp.i
 
 # target to preprocess a source file
 view.cpp.i:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/view.cpp.i
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/view.cpp.i
 .PHONY : view.cpp.i
 
 view.s: view.cpp.s
@@ -338,7 +338,7 @@ view.s: view.cpp.s
 
 # target to generate assembly for a file
 view.cpp.s:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/view.cpp.s
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/view.cpp.s
 .PHONY : view.cpp.s
 
 window.o: window.cpp.o
@@ -347,7 +347,7 @@ window.o: window.cpp.o
 
 # target to build an object file
 window.cpp.o:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/window.cpp.o
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/window.cpp.o
 .PHONY : window.cpp.o
 
 window.i: window.cpp.i
@@ -356,7 +356,7 @@ window.i: window.cpp.i
 
 # target to preprocess a source file
 window.cpp.i:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/window.cpp.i
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/window.cpp.i
 .PHONY : window.cpp.i
 
 window.s: window.cpp.s
@@ -365,7 +365,7 @@ window.s: window.cpp.s
 
 # target to generate assembly for a file
 window.cpp.s:
-	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/window.cpp.s
+	cd /home/momo/workspace/Quantum/build && $(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/window.cpp.s
 .PHONY : window.cpp.s
 
 # Help Target
@@ -376,7 +376,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Quantum"
+	@echo "... quantum"
 	@echo "... buffer.o"
 	@echo "... buffer.i"
 	@echo "... buffer.s"

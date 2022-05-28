@@ -120,7 +120,7 @@ void Editor::type_char(wchar_t c)
 
 void Editor::key_input_event(wint_t key)
 {
-    if (key_map.contains(key))
+    if (key_map.count(key) == 1)
     {
         try
         {

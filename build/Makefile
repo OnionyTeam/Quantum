@@ -124,17 +124,17 @@ fmt/fast:
 .PHONY : fmt/fast
 
 #=============================================================================
-# Target rules for targets named Quantum
+# Target rules for targets named quantum
 
 # Build rule for target.
-Quantum: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Quantum
-.PHONY : Quantum
+quantum: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 quantum
+.PHONY : quantum
 
 # fast build rule for target.
-Quantum/fast:
-	$(MAKE) -f src/quantum/CMakeFiles/Quantum.dir/build.make src/quantum/CMakeFiles/Quantum.dir/build
-.PHONY : Quantum/fast
+quantum/fast:
+	$(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/build
+.PHONY : quantum/fast
 
 # Help Target
 help:
@@ -145,7 +145,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fmt"
-	@echo "... Quantum"
+	@echo "... quantum"
 .PHONY : help
 
 

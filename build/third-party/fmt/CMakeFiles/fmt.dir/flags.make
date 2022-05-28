@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++1z
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/momo/workspace/Quantum/third-party/fmt/include/fmt -I/home/momo/workspace/Quantum/third-party/fmt/include 
+CXX_INCLUDES = -I/home/momo/workspace/Quantum/third-party/fmt/include 
 

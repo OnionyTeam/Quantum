@@ -1,16 +1,53 @@
 make all --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/momo/workspace/Quantum'
-mkdir obj
-g++ -c -Wall -std=c++20 -I./src/libs/ src/buffer.cpp -o obj/buffer.o
-g++ -c -Wall -std=c++20 -I./src/libs/ src/editor.cpp -o obj/editor.o
-g++ -c -Wall -std=c++20 -I./src/libs/ src/main.cpp -o obj/main.o
-g++ -c -Wall -std=c++20 -I./src/libs/ src/quantum.cpp -o obj/quantum.o
- 
-g++ -c -Wall -std=c++20 -I./src/libs/ src/view.cpp -o obj/view.o
-g++ -c -Wall -std=c++20 -I./src/libs/ src/window.cpp -o obj/window.o
-g++ -c -Wall -std=c++20 -I./src/libs/ src/components/status_line.cpp -o obj/components/status_line.o
-g++ -c -Wall -std=c++20 -I./src/libs/ src/command/command.cpp -o obj/command/command.o
-g++ -c -Wall -std=c++20 -I./src/libs/ src/draw/draw_helper.cpp -o obj/draw/draw_helper.o
-g++  obj/buffer.o  obj/editor.o  obj/main.o  obj/quantum.o  obj/view.o  obj/window.o  obj/components/status_line.o  obj/command/command.o  obj/draw/draw_helper.o -lncursesw -I/usr/include/ncursesw ./src/libs/fmt/libfmt.a -o quantum.out
+/usr/bin/cmake -S/home/momo/workspace/Quantum -B/home/momo/workspace/Quantum --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/momo/workspace/Quantum/CMakeFiles /home/momo/workspace/Quantum/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/momo/workspace/Quantum'
+make -f third-party/fmt/CMakeFiles/fmt.dir/build.make third-party/fmt/CMakeFiles/fmt.dir/depend
+make[2]: Entering directory '/home/momo/workspace/Quantum'
+cd /home/momo/workspace/Quantum && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/momo/workspace/Quantum /home/momo/workspace/Quantum/third-party/fmt /home/momo/workspace/Quantum /home/momo/workspace/Quantum/third-party/fmt /home/momo/workspace/Quantum/third-party/fmt/CMakeFiles/fmt.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/momo/workspace/Quantum'
+make -f third-party/fmt/CMakeFiles/fmt.dir/build.make third-party/fmt/CMakeFiles/fmt.dir/build
+make[2]: Entering directory '/home/momo/workspace/Quantum'
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=1 "Building CXX object third-party/fmt/CMakeFiles/fmt.dir/src/format.cc.o"
+cd /home/momo/workspace/Quantum/third-party/fmt && /usr/bin/c++   -I/home/momo/workspace/Quantum/third-party/fmt/include  -std=gnu++17 -o CMakeFiles/fmt.dir/src/format.cc.o -c /home/momo/workspace/Quantum/third-party/fmt/src/format.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=2 "Building CXX object third-party/fmt/CMakeFiles/fmt.dir/src/os.cc.o"
+cd /home/momo/workspace/Quantum/third-party/fmt && /usr/bin/c++   -I/home/momo/workspace/Quantum/third-party/fmt/include  -std=gnu++17 -o CMakeFiles/fmt.dir/src/os.cc.o -c /home/momo/workspace/Quantum/third-party/fmt/src/os.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --bold --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=3 "Linking CXX static library libfmt.a"
+cd /home/momo/workspace/Quantum/third-party/fmt && /usr/bin/cmake -P CMakeFiles/fmt.dir/cmake_clean_target.cmake
+cd /home/momo/workspace/Quantum/third-party/fmt && /usr/bin/cmake -E cmake_link_script CMakeFiles/fmt.dir/link.txt --verbose=
+make[2]: Leaving directory '/home/momo/workspace/Quantum'
+/usr/bin/cmake -E cmake_echo_color --switch= --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=1,2,3 "Built target fmt"
+make -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/depend
+make[2]: Entering directory '/home/momo/workspace/Quantum'
+cd /home/momo/workspace/Quantum && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/momo/workspace/Quantum /home/momo/workspace/Quantum/src/quantum /home/momo/workspace/Quantum /home/momo/workspace/Quantum/src/quantum /home/momo/workspace/Quantum/src/quantum/CMakeFiles/quantum.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/momo/workspace/Quantum'
+make -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/build
+make[2]: Entering directory '/home/momo/workspace/Quantum'
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=4 "Building CXX object src/quantum/CMakeFiles/quantum.dir/buffer.cpp.o"
+cd /home/momo/workspace/Quantum/src/quantum && /usr/bin/c++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -std=gnu++17 -o CMakeFiles/quantum.dir/buffer.cpp.o -c /home/momo/workspace/Quantum/src/quantum/buffer.cpp
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=5 "Building CXX object src/quantum/CMakeFiles/quantum.dir/command/command.cpp.o"
+cd /home/momo/workspace/Quantum/src/quantum && /usr/bin/c++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -std=gnu++17 -o CMakeFiles/quantum.dir/command/command.cpp.o -c /home/momo/workspace/Quantum/src/quantum/command/command.cpp
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=6 "Building CXX object src/quantum/CMakeFiles/quantum.dir/components/status_line.cpp.o"
+cd /home/momo/workspace/Quantum/src/quantum && /usr/bin/c++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -std=gnu++17 -o CMakeFiles/quantum.dir/components/status_line.cpp.o -c /home/momo/workspace/Quantum/src/quantum/components/status_line.cpp
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=7 "Building CXX object src/quantum/CMakeFiles/quantum.dir/draw/draw_helper.cpp.o"
+cd /home/momo/workspace/Quantum/src/quantum && /usr/bin/c++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -std=gnu++17 -o CMakeFiles/quantum.dir/draw/draw_helper.cpp.o -c /home/momo/workspace/Quantum/src/quantum/draw/draw_helper.cpp
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=8 "Building CXX object src/quantum/CMakeFiles/quantum.dir/editor.cpp.o"
+cd /home/momo/workspace/Quantum/src/quantum && /usr/bin/c++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -std=gnu++17 -o CMakeFiles/quantum.dir/editor.cpp.o -c /home/momo/workspace/Quantum/src/quantum/editor.cpp
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=9 "Building CXX object src/quantum/CMakeFiles/quantum.dir/main.cpp.o"
+cd /home/momo/workspace/Quantum/src/quantum && /usr/bin/c++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -std=gnu++17 -o CMakeFiles/quantum.dir/main.cpp.o -c /home/momo/workspace/Quantum/src/quantum/main.cpp
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=10 "Building CXX object src/quantum/CMakeFiles/quantum.dir/quantum.cpp.o"
+cd /home/momo/workspace/Quantum/src/quantum && /usr/bin/c++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -std=gnu++17 -o CMakeFiles/quantum.dir/quantum.cpp.o -c /home/momo/workspace/Quantum/src/quantum/quantum.cpp
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=11 "Building CXX object src/quantum/CMakeFiles/quantum.dir/view.cpp.o"
+cd /home/momo/workspace/Quantum/src/quantum && /usr/bin/c++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -std=gnu++17 -o CMakeFiles/quantum.dir/view.cpp.o -c /home/momo/workspace/Quantum/src/quantum/view.cpp
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=12 "Building CXX object src/quantum/CMakeFiles/quantum.dir/window.cpp.o"
+cd /home/momo/workspace/Quantum/src/quantum && /usr/bin/c++   -I/home/momo/workspace/Quantum/src/quantum/../../third-party/fmt/include -I/home/momo/workspace/Quantum/src/quantum/../libs  -std=gnu++17 -o CMakeFiles/quantum.dir/window.cpp.o -c /home/momo/workspace/Quantum/src/quantum/window.cpp
+/usr/bin/cmake -E cmake_echo_color --switch= --green --bold --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=13 "Linking CXX executable quantum"
+cd /home/momo/workspace/Quantum/src/quantum && /usr/bin/cmake -E cmake_link_script CMakeFiles/quantum.dir/link.txt --verbose=
+make[2]: Leaving directory '/home/momo/workspace/Quantum'
+/usr/bin/cmake -E cmake_echo_color --switch= --progress-dir=/home/momo/workspace/Quantum/CMakeFiles --progress-num=4,5,6,7,8,9,10,11,12,13 "Built target quantum"
+make[1]: Leaving directory '/home/momo/workspace/Quantum'
+/usr/bin/cmake -E cmake_progress_start /home/momo/workspace/Quantum/CMakeFiles 0
 make: Leaving directory '/home/momo/workspace/Quantum'
  

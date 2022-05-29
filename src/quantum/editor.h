@@ -11,8 +11,8 @@ private:
     EditorInfo _editor_info;
     std::vector<int> _changed_lines;         //it will record which rows have been modified
 public:
-    Editor(const std::string &filename = "", const WindowInfo &info = {0}, bool active = false);
-    Editor(const EditorInfo &editor_info, const WindowInfo &window_info = {0});
+    Editor(const std::string &filename = "", const WindowInfo &info = {0}, std::shared_ptr<Window> parent = nullptr, bool active = false);
+    Editor(const EditorInfo &editor_info, const WindowInfo &window_info = {0}, std::shared_ptr<Window> parent = nullptr);
 
     void open_file(const std::wstring &filename);
     void save_file();

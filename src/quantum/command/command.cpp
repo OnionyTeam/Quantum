@@ -69,6 +69,7 @@ void Command::enter(Editor *e)
         e->_current_buffer->lines[y + 1].append(e->_current_buffer->lines[y].substr(x));
         e->_current_buffer->lines[y].erase(x);
     }
+    // if (e->_current_buffer->lines[y].size() > e->_window_info.cols)
     e->_cursor_info.y++;
     e->_cursor_info.x = 0;
     e->_editor_info.modified = true;

@@ -69,7 +69,13 @@
         "stop_token": "cpp",
         "thread": "cpp",
         "cstdbool": "cpp",
-        "version": "cpp"
+        "version": "cpp",
+        "list": "cpp",
+        "any": "cpp",
+        "complex": "cpp",
+        "set": "cpp",
+        "typeindex": "cpp",
+        "variant": "cpp"
     },
     "makefile.launchConfigurations": [
         {
@@ -77,5 +83,6 @@
             "binaryPath": "/home/momo/workspace/Quantum/quantum.out",
             "binaryArgs": []
         }
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "Enabled"
 }

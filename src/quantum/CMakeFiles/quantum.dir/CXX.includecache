@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/momo/workspace/Quantum/src/quantum/buffer.cpp
-buffer.h
-/home/momo/workspace/Quantum/src/quantum/buffer.h
-ctype.h
--
-
 /home/momo/workspace/Quantum/src/quantum/buffer.h
 string
 -
@@ -34,29 +28,13 @@ map
 unordered_map
 -
 
-/home/momo/workspace/Quantum/src/quantum/components/status_line.cpp
-status_line.h
-/home/momo/workspace/Quantum/src/quantum/components/status_line.h
-fmt/format.h
--
-fmt/xchar.h
--
-
 /home/momo/workspace/Quantum/src/quantum/components/status_line.h
 ../view.h
 /home/momo/workspace/Quantum/src/quantum/view.h
-../editor.h
-/home/momo/workspace/Quantum/src/quantum/editor.h
 ../draw/draw_helper.h
 /home/momo/workspace/Quantum/src/quantum/draw/draw_helper.h
-array
+string
 -
-
-/home/momo/workspace/Quantum/src/quantum/draw/draw_helper.cpp
-draw_helper.h
-/home/momo/workspace/Quantum/src/quantum/draw/draw_helper.h
-../global_config.h
-/home/momo/workspace/Quantum/src/quantum/global_config.h
 
 /home/momo/workspace/Quantum/src/quantum/draw/draw_helper.h
 ncursesw/ncurses.h
@@ -71,6 +49,10 @@ editor_helpers.h
 /home/momo/workspace/Quantum/src/quantum/editor_helpers.h
 command/command.h
 /home/momo/workspace/Quantum/src/quantum/command/command.h
+components/status_line.h
+/home/momo/workspace/Quantum/src/quantum/components/status_line.h
+window.h
+/home/momo/workspace/Quantum/src/quantum/window.h
 experimental/filesystem
 -
 cassert
@@ -106,41 +88,9 @@ ncursesw/ncurses.h
 utils.h
 /home/momo/workspace/Quantum/src/quantum/utils.h
 
-/home/momo/workspace/Quantum/src/quantum/main.cpp
-iostream
--
-quantum.h
-/home/momo/workspace/Quantum/src/quantum/quantum.h
-
-/home/momo/workspace/Quantum/src/quantum/quantum.cpp
-quantum.h
-/home/momo/workspace/Quantum/src/quantum/quantum.h
-iostream
--
-ncursesw/ncurses.h
--
-thread
--
-window.h
-/home/momo/workspace/Quantum/src/quantum/window.h
-components/status_line.h
-/home/momo/workspace/Quantum/src/quantum/components/status_line.h
-global_config.h
-/home/momo/workspace/Quantum/src/quantum/global_config.h
-
-/home/momo/workspace/Quantum/src/quantum/quantum.h
-string
--
-cmd_parser/cmdparser.h
-/home/momo/workspace/Quantum/src/quantum/cmd_parser/cmdparser.h
-
 /home/momo/workspace/Quantum/src/quantum/utils.h
 ncursesw/ncurses.h
 -
-
-/home/momo/workspace/Quantum/src/quantum/view.cpp
-view.h
-/home/momo/workspace/Quantum/src/quantum/view.h
 
 /home/momo/workspace/Quantum/src/quantum/view.h
 vector
@@ -154,19 +104,13 @@ editor_config.h
 buffer.h
 /home/momo/workspace/Quantum/src/quantum/buffer.h
 
-/home/momo/workspace/Quantum/src/quantum/window.cpp
-window.h
 /home/momo/workspace/Quantum/src/quantum/window.h
-editor.h
-/home/momo/workspace/Quantum/src/quantum/editor.h
-cassert
+view.h
+/home/momo/workspace/Quantum/src/quantum/view.h
+list
 -
 
-/home/momo/workspace/Quantum/src/quantum/window.h
-editor.h
-/home/momo/workspace/Quantum/src/quantum/editor.h
-
-src/quantum/../../third-party/fmt/include/fmt/core.h
+third-party/fmt/include/fmt/core.h
 cstddef
 -
 cstdio
@@ -188,9 +132,9 @@ experimental/string_view
 fmt/core.h
 -
 format.h
-src/quantum/../../third-party/fmt/include/fmt/format.h
+third-party/fmt/include/fmt/format.h
 
-src/quantum/../../third-party/fmt/include/fmt/format-inl.h
+third-party/fmt/include/fmt/format-inl.h
 algorithm
 -
 cctype
@@ -214,9 +158,9 @@ locale
 io.h
 -
 format.h
-src/quantum/../../third-party/fmt/include/fmt/format.h
+third-party/fmt/include/fmt/format.h
 
-src/quantum/../../third-party/fmt/include/fmt/format.h
+third-party/fmt/include/fmt/format.h
 cmath
 -
 cstdint
@@ -234,15 +178,15 @@ system_error
 bit
 -
 core.h
-src/quantum/../../third-party/fmt/include/fmt/core.h
+third-party/fmt/include/fmt/core.h
 intrin.h
 -
 fmt/format.h
 -
 format-inl.h
-src/quantum/../../third-party/fmt/include/fmt/format-inl.h
+third-party/fmt/include/fmt/format-inl.h
 
-src/quantum/../../third-party/fmt/include/fmt/os.h
+third-party/fmt/include/fmt/os.h
 cerrno
 -
 cstddef
@@ -254,31 +198,9 @@ system_error
 xlocale.h
 -
 format.h
-src/quantum/../../third-party/fmt/include/fmt/format.h
+third-party/fmt/include/fmt/format.h
 winapifamily.h
 -
 fcntl.h
--
-
-src/quantum/../../third-party/fmt/include/fmt/xchar.h
-cwchar
--
-tuple
--
-format.h
-src/quantum/../../third-party/fmt/include/fmt/format.h
-
-src/quantum/../libs/cmd_parser/cmdparser.h
-iostream
--
-stdexcept
--
-string
--
-vector
--
-sstream
--
-functional
 -
 

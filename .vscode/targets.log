@@ -6,18 +6,12 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May 23 20:00:47 2022
+# Make data base, printed on Sun May 29 11:59:26 2022
 
 # Variables
 
-# makefile (from 'Makefile', line 10)
-OBJ :=  obj/buffer.o  obj/editor.o  obj/main.o  obj/quantum.o  obj/view.o  obj/window.o  obj/components/status_line.o  obj/command/command.o  obj/draw/draw_helper.o
 # environment
 LC_ALL = C
-# makefile (from 'Makefile', line 9)
-SRC := src/buffer.cpp src/editor.cpp src/main.cpp src/quantum.cpp src/view.cpp src/window.cpp src/components/status_line.cpp src/command/command.cpp src/draw/draw_helper.cpp
-# makefile (from 'Makefile', line 7)
-OBJDIR := obj
 # environment
 WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # environment
@@ -50,6 +44,8 @@ LANG = C
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# makefile (from 'Makefile', line 42)
+CMAKE_COMMAND = /usr/bin/cmake
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -57,7 +53,7 @@ CURDIR := /home/momo/workspace/Quantum
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # automatic
@@ -70,12 +66,16 @@ MFLAGS = -pqrR
 +D = $(patsubst %/,%,$(dir $+))
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
+# makefile (from 'Makefile', line 54)
+CMAKE_BINARY_DIR = /home/momo/workspace/Quantum
 # automatic
 @F = $(notdir $@)
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+# makefile (from 'Makefile', line 51)
+CMAKE_SOURCE_DIR = /home/momo/workspace/Quantum
 # automatic
 *F = $(notdir $*)
 # automatic
@@ -84,7 +84,7 @@ VSCODE_VERBOSE_LOGGING = true
 VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{}}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile
+# makefile (from 'Makefile', line 39)
 SHELL = /bin/sh
 # default
 MAKECMDGOALS := all
@@ -115,55 +115,47 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # automatic
 +F = $(notdir $+)
 # environment
-WSL_INTEROP = /run/WSL/491_interop
+WSL_INTEROP = /run/WSL/82_interop
 # 'override' directive
 GNUMAKEFLAGS := 
+# makefile (from 'Makefile', line 48)
+EQUALS = =
 # environment
 LOGNAME = momo
 # environment
 VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Administrator/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
-# makefile (from 'Makefile', line 11)
-EXE := quantum.out
 # makefile
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := default_target
+# makefile (from 'Makefile', line 45)
+RM = /usr/bin/cmake -E remove -f
 # environment
 USER = momo
 # default
 MAKE_VERSION := 4.3
-# makefile (from 'Makefile', line 4)
-LDFLAGS := -lncursesw -I/usr/include/ncursesw ./src/libs/fmt/libfmt.a
 # environment
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 _ = /home/momo/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-3168eeb4-1135-421b-afde-7c29734c46ac.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-7a7764eb-4a2d-4475-8937-a155ac0c6687.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/momo
 # environment
 TERM = xterm-256color
-# makefile (from 'Makefile', line 6)
-SRCDIR := src
 # default
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
-# default
-SUFFIXES := 
-# makefile (from 'Makefile', line 3)
-LD := g++
+# makefile (from 'Makefile', line 21)
+SUFFIXES = 
 # environment
 WSL_DISTRO_NAME = Ubuntu-22.04
-# makefile (from 'Makefile', line 2)
-CXXFLAGS := -c -Wall -std=c++20 -I./src/libs/
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
-# makefile (from 'Makefile', line 1)
-CXX := g++
 # variable set hash-table stats:
-# Load=76/1024=7%, Rehash=0, Collisions=4/123=3%
+# Load=72/1024=7%, Rehash=0, Collisions=2/111=2%
 
 # Pattern-specific Variable Values
 
@@ -171,244 +163,240 @@ CXX := g++
 
 # Directories
 
-# src/command (device 2064, inode 46382): 4 files, no impossibilities.
-# src/draw (device 2064, inode 55308): 4 files, no impossibilities.
-# src (device 2064, inode 46376): 22 files, no impossibilities.
-# . (device 2064, inode 46366): 16 files, no impossibilities.
-# src/components (device 2064, inode 46383): 4 files, no impossibilities.
+# . (device 2064, inode 46366): 20 files, no impossibilities.
 
-# 50 files, no impossibilities in 5 directories.
+# 20 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
-obj/%.o: src/%.cpp
-#  recipe to execute (from 'Makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
+%.hpux_make_needs_suffix_list:
 
-obj/%.o: src/%.cpp src/%.h
-#  recipe to execute (from 'Makefile', line 34):
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-# 2 implicit rules, 0 (0.0%) terminal.
+# 1 implicit rules, 0 (0.0%) terminal.
 # Files
 
-# Not a target:
-src/draw/draw_helper.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-22 13:42:26.2083628
-#  File has been updated.
-#  Successfully updated.
+depend:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 110):
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 
-obj/window.o: src/window.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'window'
-#  Last modified 2022-05-22 14:14:15.9583628
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
+default_target: all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 
-# Not a target:
-src/buffer.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-17 19:07:34
-#  File has been updated.
-#  Successfully updated.
-
-obj/command/command.o: src/command/command.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'command/command'
-#  Last modified 2022-05-22 14:15:21.3383628
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-obj/main.o: src/main.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'main'
-#  Last modified 2022-05-22 14:13:41.0983628
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
+edit_cache/fast: edit_cache
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-22 13:05:05.1083628
+#  Last modified 2022-05-28 19:28:41.0213613
 #  File has been updated.
 #  Successfully updated.
 
-quantum.out: obj obj/buffer.o obj/editor.o obj/main.o obj/quantum.o obj/view.o obj/window.o obj/components/status_line.o obj/command/command.o obj/draw/draw_helper.o
+rebuild_cache:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-22 14:15:22.0783628
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 25):
-	$(LD) $(OBJ) $(LDFLAGS) -o $@
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 61):
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 
-# Not a target:
-src/main.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-12 15:58:28
-#  File has been updated.
-#  Successfully updated.
+.SILENT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
-	rm -f $(OBJ)
-	rm -f $(EXE)
+#  recipe to execute (from 'Makefile', line 90):
+	$(MAKE) -f CMakeFiles/Makefile2 clean
 
-# Not a target:
-src/quantum.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-22 13:49:39.8583628
-#  File has been updated.
-#  Successfully updated.
-
-obj/draw/draw_helper.o: src/draw/draw_helper.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'draw/draw_helper'
-#  Last modified 2022-05-22 14:15:21.8383628
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
- 
-
-obj:
+cmake_force:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-22 14:14:15.9583628
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 28):
-	mkdir $@
+#  File does not exist.
+#  File has not been updated.
+
+preinstall/fast:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 105):
+	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+
+edit_cache:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 72):
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+
+rebuild_cache/fast: rebuild_cache
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 
 # Not a target:
-src/view.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-21 13:51:10.4967179
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/components/status_line.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-22 14:06:37.3983628
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/command/command.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-22 12:40:36.2483628
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-.DEFAULT:
+.hpux_make_needs_suffix_list:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+fmt: cmake_check_build_system
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 118):
+	$(MAKE) -f CMakeFiles/Makefile2 fmt
+
+preinstall: all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 100):
+	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+
 # Not a target:
-src/window.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-22 13:58:32.6683628
-#  File has been updated.
-#  Successfully updated.
+.DEFAULT:
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-obj/quantum.o: src/quantum.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'quantum'
-#  Last modified 2022-05-22 14:14:14.5383628
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-all: quantum.out
+all: cmake_check_build_system
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  recipe to execute (from 'Makefile', line 83):
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/momo/workspace/Quantum/CMakeFiles /home/momo/workspace/Quantum/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/momo/workspace/Quantum/CMakeFiles 0
 
-obj/editor.o: src/editor.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'editor'
-#  Last modified 2022-05-22 14:13:40.5583628
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-run: all
+help:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 18):
-	./$(EXE)
+#  recipe to execute (from 'Makefile', line 141):
+	@echo "The following are some of the valid targets for this Makefile:"
+	@echo "... all (the default if no target is provided)"
+	@echo "... clean"
+	@echo "... depend"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... fmt"
+	@echo "... quantum"
 
-obj/view.o: src/view.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'view'
-#  Last modified 2022-05-22 14:14:15.2883628
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
+clean/fast: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 
-# Not a target:
-src/editor.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-22 14:00:40.1683628
-#  File has been updated.
-#  Successfully updated.
+fmt/fast:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 123):
+	$(MAKE) -f third-party/fmt/CMakeFiles/fmt.dir/build.make third-party/fmt/CMakeFiles/fmt.dir/build
 
-obj/buffer.o: src/buffer.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'buffer'
-#  Last modified 2022-05-22 14:13:39.1383628
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-.PHONY: all clean
+.NOTPARALLEL:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/components/status_line.o: src/components/status_line.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'components/status_line'
-#  Last modified 2022-05-22 14:15:20.4583628
+cmake_check_build_system:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 31):
-	$(CXX) $(CXXFLAGS) $< -o $@
+#  Needs to be updated (-q is set).
+# automatic
+# @ := cmake_check_build_system
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  recipe to execute (from 'Makefile', line 160):
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+
+.SUFFIXES: .hpux_make_needs_suffix_list
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quantum/fast:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 136):
+	$(MAKE) -f src/quantum/CMakeFiles/quantum.dir/build.make src/quantum/CMakeFiles/quantum.dir/build
+
+.PHONY: default_target cmake_force rebuild_cache rebuild_cache/fast edit_cache edit_cache/fast all clean clean/fast preinstall preinstall/fast depend fmt fmt/fast quantum quantum/fast help cmake_check_build_system
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quantum: cmake_check_build_system
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 131):
+	$(MAKE) -f CMakeFiles/Makefile2 quantum
 
 # files hash-table stats:
-# Load=27/1024=3%, Rehash=0, Collisions=0/82=0%
+# Load=25/1024=2%, Rehash=0, Collisions=0/84=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 83 / storage = 945 B / avg = 11 B
-# current buf: size = 8162 B / used = 945 B / count = 83 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 47 / storage = 526 B / avg = 11 B
+# current buf: size = 8162 B / used = 526 B / count = 47 / avg = 11 B
 
-# strcache performance: lookups = 121 / hit rate = 31%
+# strcache performance: lookups = 138 / hit rate = 65%
 # hash-table stats:
-# Load=83/8192=1%, Rehash=0, Collisions=2/121=2%
-# Finished Make data base on Mon May 23 20:00:47 2022
+# Load=47/8192=1%, Rehash=0, Collisions=0/138=0%
+# Finished Make data base on Sun May 29 11:59:26 2022
 
  

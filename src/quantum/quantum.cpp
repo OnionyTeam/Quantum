@@ -4,6 +4,7 @@
 #include <thread>
 #include "window.h"
 #include "components/status_line.h"
+#include "editor.h"
 #include "global_config.h"
 
 Quantum::Quantum(int argc, char* argv[])
@@ -18,22 +19,25 @@ int Quantum::run()
     // Parse the args
     std::string filename = parser.get<std::string>("f");
 
-    Window w;
-    auto editor = std::make_shared<Editor>(filename, WindowInfo {config::ncurses_info.cols, config::ncurses_info.lines - 1, 0, 0});
+    auto w = std::make_shared<Window>();
+    auto status_line = std::make_shared<StatusLine>(w, WindowInfo {config::ncurses_info.cols, 1, 0, config::ncurses_info.lines - 1});
+    w->set_status_line(status_line);
     // auto editor2 = std::make_shared<Editor>(filename, WindowInfo {10, 10, 5, 5});
-    auto status_line = std::make_shared<StatusLine>(editor, WindowInfo {config::ncurses_info.cols, 1, 0, config::ncurses_info.lines - 1});
-    w.add_view(status_line, false);
-    w.add_view(editor, true);
-    w.update_all();
-    timeout(0);
-    while (w.status() != WindowStatus::QUIT)
+    auto editor = std::make_shared<Editor>(filename, WindowInfo {config::ncurses_info.cols, (config::ncurses_info.lines - 1) / 2, 0, 0}, w);
+    // auto editor2 = std::make_shared<Editor>(filename,
+    //  WindowInfo {config::ncurses_info.cols, (config::ncurses_info.lines - 1) / 2, 0, (config::ncurses_info.lines - 1)}, w);
+    // w->add_view(editor2, true);
+    w->add_view(editor, true);
+    w->update_all();
+    // timeout(0);
+    while (w->status() != WindowStatus::QUIT)
     {
         wint_t ch;
         get_wch(&ch);
-        status_line->show_message(std::to_wstring(ch), 1000);
         if (ch)
-            w.handle(ch);
-        w.update();
+            w->handle(ch);
+        config::logger << L"OK" << config::endl;
+        w->update();
     }
     return 0;
 

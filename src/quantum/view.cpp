@@ -1,7 +1,7 @@
 #include "view.h"
 
-View::View(const WindowInfo &info)
-    : _buffers(), _window_info(info),
+View::View(const WindowInfo &info, std::shared_ptr<Window> parent)
+    : _buffers(), _window_info(info), _parent(parent),
       _cursor_info{0},
       _read_only(false),
       _scroll_x(0), _scroll_y(0), _last_cursor_x(0), _status(ViewStatus::NORMAL)

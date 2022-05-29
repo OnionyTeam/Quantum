@@ -1,12 +1,14 @@
 #include "editor.h"
 #include "editor_helpers.h"
 #include "command/command.h"
+#include "components/status_line.h"
+#include "window.h"
 #include <experimental/filesystem>
 #include <cassert>
 #include <fstream>
 
-Editor::Editor(const std::string &filename, const WindowInfo &info, bool active)
-    : View(info)
+Editor::Editor(const std::string &filename, const WindowInfo &info, std::shared_ptr<Window> parent, bool active)
+    : View(info, parent)
 {
     _active = active;
     _editor_info.filename = filename;
@@ -17,8 +19,8 @@ Editor::Editor(const std::string &filename, const WindowInfo &info, bool active)
     init();
 }
 
-Editor::Editor(const EditorInfo &editor_info, const WindowInfo &window_info)
-    : View(window_info), _editor_info(editor_info)
+Editor::Editor(const EditorInfo &editor_info, const WindowInfo &window_info, std::shared_ptr<Window> parent)
+    : View(window_info, parent), _editor_info(editor_info)
 {
     load_file();
     init();
@@ -53,8 +55,18 @@ void Editor::update_buffer()
 
 void Editor::update_cursor()
 {
-    wmove(_window.get(), _cursor_info.y - _scroll_y + _window_info.y, 
-        wcswidth(_current_buffer->lines[_cursor_info.y].c_str(), _cursor_info.x - _scroll_x) + _window_info.x);
+    int y_pos = 0;
+    for (auto &&a : _current_buffer->lines)
+    {
+        size_t len  = a.size();
+        while (len > 0)
+        {
+            len -= _window_info.cols;
+            y_pos++;
+        }
+    }
+    wmove(_window.get(), y_pos - _scroll_y, 
+        wcswidth(_current_buffer->lines[_cursor_info.y].c_str(), _cursor_info.x - _scroll_x));
 }
 void Editor::update()
 {
@@ -133,5 +145,6 @@ void Editor::key_input_event(wint_t key)
     else
     {
         type_char(key);
+        _parent->get_status_line()->show_message(std::to_wstring(key));
     }
 }

@@ -14,13 +14,14 @@ enum class ViewStatus
 };
 
 class StatusLine;
-
+class Window;
 class View
 {
     friend StatusLine;
 protected:
     std::vector<std::shared_ptr<Buffer>> _buffers;
     std::shared_ptr<Buffer> _current_buffer;
+    std::shared_ptr<Window> _parent;
     WindowInfo _window_info;
     std::shared_ptr<WINDOW> _window;
     CursorInfo _cursor_info;    // abstract position
@@ -31,7 +32,7 @@ protected:
     unsigned int _last_cursor_x;
     ViewStatus _status;
 public:
-    View(const WindowInfo &info = {0});
+    View(const WindowInfo &info = {0}, std::shared_ptr<Window> parent = nullptr);
     virtual void update() {};
     virtual void key_input_event(wint_t key) {};
     void set_active(bool k) { _active = k; }

@@ -3,6 +3,7 @@
 
 #include <ncursesw/ncurses.h>
 #include "../global_config.h"
+
 enum class Align
 {
     LeftAlign,

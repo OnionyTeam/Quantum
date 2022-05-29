@@ -8,8 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/quantum.dir/quantum.cpp.o"
   "CMakeFiles/quantum.dir/view.cpp.o"
   "CMakeFiles/quantum.dir/window.cpp.o"
-  "quantum.pdb"
   "quantum"
+  "quantum.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

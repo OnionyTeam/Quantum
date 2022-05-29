@@ -44,7 +44,7 @@ const static std::unordered_map<int, Command::Edit> key_map{
     {KEY_F(2), Command::Edit::Save}
 };
 
-const static std::map<Command::Edit, std::function<void(Editor *)>> command_map{
+const static std::map<Command::Edit, std::function<void(Editor *)>> command_map {
     {Command::Edit::MoveUp, Command::move_up},
     {Command::Edit::MoveDown, Command::move_down},
     {Command::Edit::MoveLeft, Command::move_left},
